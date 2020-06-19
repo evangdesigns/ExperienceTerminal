@@ -1,0 +1,20 @@
+@import './variables';
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+body {
+    font-family: 'Nunito', sans-serif;
+    width:100%;
+    margin:0 auto;
+    padding:0;
+    background-color:$secondColor;
+}
+.letter-spacing{
+  letter-spacing: 3px;
+}
+.upperCase {
+  text-transform: uppercase;
+}
+.hide {
+    display:none !important;
+}
