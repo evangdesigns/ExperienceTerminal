@@ -98,3 +98,10 @@
 /Users/egrabenstein/Dropbox/Employment/jot/EmployerTerminal/EmployerTerminal/obj/Debug/netcoreapp3.1/EmployerTerminal.dll
 /Users/egrabenstein/Dropbox/Employment/jot/EmployerTerminal/EmployerTerminal/obj/Debug/netcoreapp3.1/EmployerTerminal.pdb
 /Users/egrabenstein/Dropbox/Employment/jot/EmployerTerminal/EmployerTerminal/obj/Debug/netcoreapp3.1/EmployerTerminal.genruntimeconfig.cache
+/Users/egrabenstein/Dropbox/Employment/jot/EmployerTerminal/EmployerTerminal/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/egrabenstein/Dropbox/Employment/jot/EmployerTerminal/EmployerTerminal/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/egrabenstein/Dropbox/Employment/jot/EmployerTerminal/EmployerTerminal/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Logging.dll
+/Users/egrabenstein/Dropbox/Employment/jot/EmployerTerminal/EmployerTerminal/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Protocols.dll
+/Users/egrabenstein/Dropbox/Employment/jot/EmployerTerminal/EmployerTerminal/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/egrabenstein/Dropbox/Employment/jot/EmployerTerminal/EmployerTerminal/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Tokens.dll
+/Users/egrabenstein/Dropbox/Employment/jot/EmployerTerminal/EmployerTerminal/bin/Debug/netcoreapp3.1/System.IdentityModel.Tokens.Jwt.dll

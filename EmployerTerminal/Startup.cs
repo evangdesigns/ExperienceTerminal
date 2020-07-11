@@ -32,6 +32,10 @@ namespace EmployerTerminal
                 options.AddPolicy("ItsAllGood",
                     builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin())
             );
+
+            services.AddTransient<TitleRepository>();
+            services.AddTransient<SkillRepository>();
+            services.AddSingleton<IConfiguration>(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

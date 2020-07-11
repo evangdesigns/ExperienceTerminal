@@ -7,7 +7,7 @@ namespace EmployerTerminal.Models
 {
     public class Title
     {
-        public int TitleId { get; set; }
-        public string TitleName { get; set; }
+        public int Title_Id { get; set; }
+        public string Title_Name { get; set; }
     }
 }

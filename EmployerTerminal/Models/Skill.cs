@@ -7,8 +7,8 @@ namespace EmployerTerminal.Models
     public class Skill
     {
         public int Skill_id { get; set; }
-        public int Skill_categroy { get; set; }
+        public int Skill_category { get; set; }
         public string Skill_name { get; set; }
-        public string Icon_svg { get; set; }
+        public string Svg_icon { get; set; }
     }
 }

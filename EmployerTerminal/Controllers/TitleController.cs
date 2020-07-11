@@ -6,10 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using EmployerTerminal.DataAccess;
 
-
-namespace EmployerTerminal
+namespace EmployerTerminal.Controllers
 {
-    [Route("api/title")]
+    [Route("api/titles")]
     [ApiController]
     public class TitleController : ControllerBase
     {

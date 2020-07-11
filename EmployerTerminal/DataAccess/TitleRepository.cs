@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Dapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using EmployerTerminal.Models;
 using System.Data.SqlClient;
+using Dapper;
 
 namespace EmployerTerminal.DataAccess
 {
     public class TitleRepository
     {
-        string ConnectionString;
+        readonly string ConnectionString;
         public TitleRepository(IConfiguration config)
         {
             ConnectionString = config.GetConnectionString("EmployerTerminal");
