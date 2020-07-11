@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{0BBEEDEA-2DC6-4AC2-A8FD-A27D8EB8DAEC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="EmployerTerminal/Controllers/TitleController.cs">
+    <Files>
+      <File FileName="EmployerTerminal/Controllers/TitleController.cs" Line="10" Column="27" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="EmployerTerminal" expanded="True">
+            <Node name="EmployerTerminal" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="TitleController.cs" selected="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.EmployerTerminal PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

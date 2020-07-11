@@ -4,7 +4,7 @@
 
 
 ## Screenshots
-![Site Preview](#)
+<!-- ![Site Preview](#) -->
 
 ## Demo
 <!-- Preview it here: [EvanGDesigns.com](https://evangdesigns.com) -->
