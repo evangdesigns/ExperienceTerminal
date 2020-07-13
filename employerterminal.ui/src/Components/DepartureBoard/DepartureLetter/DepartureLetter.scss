@@ -1,0 +1,120 @@
+.DepartureLetter {
+  margin-bottom: -30px;
+  span.letter {
+    display: inline-block;
+    width: 1em;
+    margin:  0.1em;
+    height: 1.3em;
+    text-align: center;
+    position: relative;
+    font-size: 40px;
+    text-transform:uppercase;
+  }
+
+  span.letter {
+    -webkit-box-shadow:
+      inset 0 -.07em 0 rgba(50, 50, 50, .7),
+      inset 0 -.14em 0 rgba(0, 0, 0, .7),
+      inset .14em 0 .28em rgba(0, 0, 0, .9),
+      inset -.14em 0 .28em rgba(0, 0, 0, .9),
+      0 0 0 rgba(255, 255, 255, .2);
+
+    -moz-box-shadow:
+      inset 0 -.07em 0 rgba(50, 50, 50, .7),
+      inset 0 -.14em 0 rgba(0, 0, 0, .7),
+      inset .14em 0 .28em rgba(0, 0, 0, .9),
+      inset -.14em 0 .28em rgba(0, 0, 0, .9),
+      0 0 0 rgba(255, 255, 255, .2);
+
+    -o-box-shadow:
+      inset 0 -.07em 0 rgba(50, 50, 50, .7),
+      inset 0 -.14em 0 rgba(0, 0, 0, .7),
+      inset .14em 0 .28em rgba(0, 0, 0, .9),
+      inset -.14em 0 .28em rgba(0, 0, 0, .9),
+      0 0 0 rgba(255, 255, 255, .2);
+
+    box-shadow:
+      inset 0 -.07em 0 rgba(50, 50, 50, .7),
+      inset 0 -.14em 0 rgba(0, 0, 0, .7),
+      inset .14em 0 .28em rgba(0, 0, 0, .9),
+      inset -.14em 0 .28em rgba(0, 0, 0, .9),
+      0 0 0 rgba(255, 255, 255, .2);
+  }
+
+  span.letter:before {
+    border-top: .07em solid rgba(0, 0, 0, .4);
+    border-bottom: .07em solid rgba(255, 255, 255, .08);
+    height: 0;
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: .55em;
+    content: " ";
+    display: block;
+    z-index: 2;
+    -moz-transform: translate(0, -.05em);
+    -o-transform: translate(0, -.1em);
+  }
+
+  span.fold {
+    display: block;
+    position: absolute;
+    height: 0;
+    top: .6em;
+  }
+
+  span.flap {
+    display: block;
+    position: absolute;
+    top: 0em;
+    width: 1em;
+    height: .65em;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  span.text {
+    width: 100%;
+  }
+
+  span.bottom {
+    top: .6em;
+  }
+
+  span.bottom span.text {
+    position: relative;
+    top: -.9em;
+  }
+
+  span.top span.text {
+    position: relative;
+    top: -.3em;
+  }
+
+  span.flap.falling {
+    display: none;
+    bottom: 0;
+    top: auto;
+  }
+
+  span.flap.falling span.text {
+    -webkit-backface-visibility: hidden;
+    border-top: .03em solid #444;
+    border-bottom: .03em solid #444;
+    background: #000;
+    display: block;
+    position: relative;
+
+    -webkit-transform: scaleY(1);
+    -moz-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    transform: scaleY(1);
+
+    -webkit-transition: -webkit-transform linear;
+    -moz-transition: -moz-transform linear;
+    -o-transition: -o-transform linear;
+    transition: transform linear;
+  }
+}
+
+
