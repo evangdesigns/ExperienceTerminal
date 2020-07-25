@@ -1,0 +1,77 @@
+.TitleSelector {
+  display:flex;
+  position:relative;
+  justify-content: center;
+  vertical-align: middle;
+  margin: 150px 0 20px;
+  width: 100%;
+  .radio-container {
+    position: relative;
+    top: -8px;
+    width: 100%;
+    .job-title {
+      margin: 0;
+      font-size: large;
+      position: absolute;
+      bottom: 80px;
+      font-weight: 600;
+      z-index: 0;
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+    }
+  }
+  .radio-button {
+    cursor: pointer;
+    position: relative;
+  }
+  .radio-base {
+    position: relative;
+    z-index: 1;
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    border-radius: 100px;
+    background-color: white;
+  }
+  .radio-dot {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    transition: all .75s ease-in-out;
+  }
+  .selected {
+    background: #ff0000;
+
+  }
+  .unselected {
+    -webkit-transform: scale(0.1);
+    -ms-transform: scale(0.1);
+    transform: scale(0.1);
+  }
+  .behind-block {
+    position: absolute;
+    z-index: 0;
+    padding: 4px 0;
+    background:#fff;
+    height:15px;
+    width:100%;
+    border-radius: 100px;
+  }
+  .flow-line {
+    position: absolute;
+    background:#ff0000;
+    left:5px;
+    z-index: 4;
+    height:8px;
+    border-radius: 100px;
+    transition: width .5s ease-in-out;
+  }
+
+
+
+}

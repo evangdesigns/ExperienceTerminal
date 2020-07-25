@@ -1,13 +1,11 @@
 .DepartureLetter {
-  margin-bottom: -30px;
+margin:.5%;
   span.letter {
     display: inline-block;
-    width: 1em;
-    margin:  0.1em;
-    height: 1.3em;
+    width: 100%;
     text-align: center;
     position: relative;
-    font-size: 40px;
+    font-size: 2vw;
     text-transform:uppercase;
   }
 
@@ -65,8 +63,8 @@
 
   span.flap {
     display: block;
-    position: absolute;
-    top: 0em;
+    position: relative;
+    top: -.2em;
     width: 1em;
     height: .65em;
     margin: 0;
@@ -77,18 +75,11 @@
     width: 100%;
   }
 
-  span.bottom {
-    top: .6em;
-  }
-
-  span.bottom span.text {
-    position: relative;
-    top: -.9em;
-  }
-
-  span.top span.text {
-    position: relative;
-    top: -.3em;
+  .bottom {
+    span.text {
+      position: relative;
+      top:-.65em
+    }
   }
 
   span.flap.falling {

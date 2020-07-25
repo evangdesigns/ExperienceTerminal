@@ -1,11 +1,18 @@
 import axios from 'axios';
 import { baseUrl }from '../keys.json';
 
-const getTitle = (id) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/api/title/${id}`)
+const getAllTitles = () => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/titles/`)
     .then((result) => resolve(result.data))
     .catch(error => reject(error))
 });
 
 
-export { getTitle };
+const getTitle = (id) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/titles/${id}`)
+    .then((result) => resolve(result.data))
+    .catch(error => reject(error))
+});
+
+
+export { getAllTitles, getTitle };

@@ -1,11 +1,35 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
 .App {
-  text-align: center;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.enchelada {
+  width: 100%;
+  padding: 0 20%;
+  .inline {
+    display: inline-flex;
+  }
+  .right {
+    position: relative;
+    right: 0;
+  }
+  svg.arrow {
+    fill: #fff;
+    width: 50px;
+    margin-right: 10px;
+  }
+  .head-board {
+    margin: 20px;
+    padding: 20px;
+    background: rgb(30, 30, 30);
+    border-radius: 10px;
+    .board-header{
+      margin-bottom: 30px;
+    }
+}
 }
