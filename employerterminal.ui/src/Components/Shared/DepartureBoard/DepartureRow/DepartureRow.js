@@ -1,6 +1,6 @@
 import React from 'react';
 import DepartureLetter from '../DepartureLetter/DepartureLetter';
-import { splitTheDifference } from '../../../helpers/utilities/makeADifference';
+import { splitTheDifference } from '../../../../helpers/utilities/makeADifference';
 import './DepartureRow.scss';
 
 class DepartureRow extends React.Component {

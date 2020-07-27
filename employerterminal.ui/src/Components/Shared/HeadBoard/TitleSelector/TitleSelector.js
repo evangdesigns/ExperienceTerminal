@@ -1,6 +1,6 @@
 import React from 'react';
-import './TitleSelector.scss';
 import RadioSelector from './RadioSelection/RadioSelection';
+import './TitleSelector.scss';
 
 class TitleSelector extends React.Component {
   state = {
@@ -33,7 +33,7 @@ class TitleSelector extends React.Component {
       } else if (selected === 'Marketeer') {
         return '74%'
       } else if (selected === 'UI/UX Designer') {
-        return '99%'
+        return '98%'
       }
     }
     return (
@@ -44,8 +44,8 @@ class TitleSelector extends React.Component {
           <div className="radio-container d-flex justify-content-between">
           {titles.map(title => {
           if (selected !== title.title_Name)
-            return <RadioSelector key={title.title_id} id={title.title_Name} title={title} changeStatus={this.changeStatus} status='unselected' />
-            return <RadioSelector key={title.title_id} id={title.title_Name} title={title} changeStatus={this.changeStatus} status='selected' />
+            return <RadioSelector key={title.title_Id} id={title.title_Name} title={title} changeStatus={this.changeStatus} status='unselected' />
+            return <RadioSelector key={title.title_Id} id={title.title_Name} title={title} changeStatus={this.changeStatus} status='selected' />
             }
           )}
           </div>

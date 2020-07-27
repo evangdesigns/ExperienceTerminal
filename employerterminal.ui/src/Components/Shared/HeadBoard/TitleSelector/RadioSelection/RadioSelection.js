@@ -13,7 +13,7 @@ class RadioSelector extends React.Component {
   render () {
     const { title, status } = this.props;
     return (
-      <div>
+      <div className="radio-wrapper">
         <p className="job-title">{title.title_Name}</p>
         <div className="radio-button" id={title.title_Name} onClick={this.eventHandler}>
           <div className="radio-base" id={title.title_Name}>

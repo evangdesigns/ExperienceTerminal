@@ -4,16 +4,23 @@ import './DepartureBoard.scss';
 
 class DepartureBoard extends React.Component {
 
-  render () {
+  renderView = () => {
     const { messages, letterCount } = this.props;
-    const buildBoard = messages.map(message => <DepartureRow key={message} message={message} letterCount={letterCount} />)
+    if (messages) {
+      return (
+        messages.map(message => <DepartureRow key={message} message={message} letterCount={letterCount} />)
+      )
+    } else {
+      return (
+        <h1 className="text-center">No Departures</h1>
+      )
+    }
+  }
 
+  render () {
     return (
       <div className="DepartureBoard">
-        {messages
-        ? buildBoard
-        : <h1 className="text-center">No Departures</h1>
-        }
+        {this.renderView()}
       </div>
     );
   }

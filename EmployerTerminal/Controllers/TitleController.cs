@@ -25,5 +25,19 @@ namespace EmployerTerminal.Controllers
             var titles = _titleRepository.GetAllTitles();
             return Ok(titles);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetTitle( int id)
+        {
+            var title = _titleRepository.GetTitle(id);
+            return Ok(title);
+        }
+
+        [HttpGet("title/{title}")]
+        public IActionResult GetTitleId(string title)
+        {
+            int titleId = _titleRepository.GetTitleId(title);
+            return Ok(titleId);
+        }
     }
 }

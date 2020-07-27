@@ -23,36 +23,6 @@
       -o-transform: rotate(-45deg);
     }
   }
-  .radio-button {
-    cursor: pointer;
-    position: relative;
-  }
-  .radio-base {
-    position: relative;
-    z-index: 1;
-    height: 25px;
-    width: 25px;
-    padding: 5px;
-    border-radius: 100px;
-    background-color: white;
-  }
-  .radio-dot {
-    position: relative;
-    z-index: 10;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    transition: all .75s ease-in-out;
-  }
-  .selected {
-    background: #ff0000;
-
-  }
-  .unselected {
-    -webkit-transform: scale(0.1);
-    -ms-transform: scale(0.1);
-    transform: scale(0.1);
-  }
   .behind-block {
     position: absolute;
     z-index: 0;
@@ -71,7 +41,5 @@
     border-radius: 100px;
     transition: width .5s ease-in-out;
   }
-
-
 
 }

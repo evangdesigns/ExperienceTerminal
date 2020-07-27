@@ -7,6 +7,11 @@ const getAllTitles = () => new Promise((resolve, reject) => {
     .catch(error => reject(error))
 });
 
+const getTitleId = (title) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/titles/title/${title}`)
+    .then((result) => resolve(result.data))
+    .catch(error => reject(error))
+});
 
 const getTitle = (id) => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/titles/${id}`)
@@ -15,4 +20,4 @@ const getTitle = (id) => new Promise((resolve, reject) => {
 });
 
 
-export { getAllTitles, getTitle };
+export { getAllTitles, getTitleId, getTitle };
