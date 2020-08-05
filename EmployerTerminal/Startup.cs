@@ -35,6 +35,8 @@ namespace EmployerTerminal
 
             services.AddTransient<TitleRepository>();
             services.AddTransient<SkillRepository>();
+            services.AddTransient<ProjectRepository>();
+            services.AddTransient<ProjectSectionRepository>();
             services.AddSingleton<IConfiguration>(Configuration);
         }
 

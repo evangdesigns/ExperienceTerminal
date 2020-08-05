@@ -18,6 +18,7 @@ namespace EmployerTerminal.Controllers
         {
             _skillRepository = repository;
         }
+
         // GET: api/skills
         [HttpGet]
         public IActionResult GetAllSkills()
@@ -25,6 +26,7 @@ namespace EmployerTerminal.Controllers
             var skills = _skillRepository.GetAllSkills();
             return Ok(skills);
         }
+
         // GET: api/skills/title/{titleId}
         [HttpGet("title/{titleId}")]
         public IActionResult GetSkillsByTitle(int titleId)
