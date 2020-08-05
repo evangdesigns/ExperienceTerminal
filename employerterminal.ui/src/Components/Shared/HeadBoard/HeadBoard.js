@@ -2,31 +2,35 @@ import React from 'react';
 import DepartureBoard from '../DepartureBoard/DepartureBoard';
 import TitleSelector from './TitleSelector/TitleSelector';
 import { ReactComponent as Arrow } from '../../../images/icons/icon_arrow.svg';
-
-// import './HeadBoard.scss';
+import { Row, Col, Jumbotron } from 'react-bootstrap';
 
 class HeadBoard extends React.Component {
 
   render () {
     const { selectedTitle, titles, titleChange } = this.props;
     return (
-      <div className="head-board">
-        <div className="board-header d-flex flex-wrap justify-content-between">
-          <div className="inline">
-            <Arrow className="arrow"/><h1>Arrivals</h1>
-          </div>
-          <div className="inline">
-            <h1>Employer Terminal</h1>
-          </div>
-        </div>
-        <DepartureBoard
-          letterCount={20}
-          messages={['Evan Grabenstein', selectedTitle ]}
-        />
-        <div className="title-selector-container">
+      <Jumbotron bsPrefix="head-board">
+        <Row className="board-header d-flex flex-wrap justify-content-between">
+          <Col inline>
+            <Row>
+              <Col lg={2}><Arrow className="arrow"/></Col>
+              <Col><h1 className="align-middle">Arrivals</h1></Col>
+            </Row>
+          </Col>
+          <Col>
+            <h1 className="text-right">Employer Terminal</h1>
+          </Col>
+        </Row>
+        <Row>
+          <DepartureBoard
+            letterCount={20}
+            messages={['Evan Grabenstein', selectedTitle ]}
+          />
+        </Row>
+        <Row className="title-selector-container">
           <TitleSelector titles={titles} selectedTitle={selectedTitle} titleChange={titleChange}/>
-        </div>
-      </div>
+        </Row>
+      </Jumbotron>
     );
   }
 }

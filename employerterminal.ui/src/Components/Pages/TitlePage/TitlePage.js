@@ -1,60 +1,48 @@
 import React from 'react';
-import DepartureBoard from '../../Shared/DepartureBoard/DepartureBoard';
-import { getTitleId } from '../../../helpers/data/titles';
-import { getAllSkills, getSkillsByTitle } from '../../../helpers/data/skills';
-import RadioSelector from '../../Shared/HeadBoard/TitleSelector/RadioSelection/RadioSelection';
+import SkillBox from '../../Shared/Skills/SkillBox';
+import ProjectSection from '../../Shared/ProjectSection/ProjectSection';
+import { getProjectSectionsByTitleId } from '../../../helpers/data/projects';
 
 class TitlePage extends React.Component {
   state = {
-    skills: []
+    projectSections: [],
   }
 
   componentDidMount() {
-    const { titleId } = this.state;
-    this.getSkills(titleId);
+    const { titleId } = this.props;
+    this.getProjectsSections(titleId)
   }
 
   componentWillReceiveProps(nextProps) {
-    const { selectedTitle } = this.props;
-    if (nextProps.selectedTitle !== selectedTitle ) {
-      this.getTitleId(nextProps.selectedTitle)
+    const { titleId } = this.props;
+    if (nextProps.titleId !== titleId ) {
+      this.getProjectsSections(nextProps.titleId);
       }
     }
 
-  getTitleId = (selectedTitle) => {
-    getTitleId(selectedTitle)
-    .then(titleId => this.getSkills(titleId))
+  getProjectsSections = (titleId) => {
+    getProjectSectionsByTitleId(titleId)
+    .then(projectSections=> this.setState({ projectSections : projectSections }))
   }
 
-  getSkills = (titleId) => {
-    if (titleId === 1){
-      getAllSkills()
-      .then(skills => this.setState({skills:skills}))
+  renderProjectSections = () => {
+    const { projectSections } = this.state;
+    if (projectSections) {
+      return (
+        projectSections.map(section => <ProjectSection key={section.project_section_id} section={section} sectionId={section.project_section_id}/>)
+      )
     } else {
-      getSkillsByTitle(titleId)
-      .then(skills => this.setState({skills:skills}))
+      return(null);
     }
   }
 
   render () {
-    const { selectedTitle } = this.props;
+    const { titleId } = this.props;
+    const { projectSections } = this.state;
     return (
       <div className="TitlePage">
-
-          <div className="row head-board">
-            <div className="col-1 align-middle justify-content-center">
-              <RadioSelector status="selected" title={""} />
-            </div>
-            <div className="col-10">
-              <DepartureBoard letterCount={18} messages={["Skills"]} />
-            </div>
-            <div className="col-1">
-
-            </div>
-          </div>
-          <div>
-            <h1 className="text-center">{`${selectedTitle} Projects Component Go Here`}</h1>
-          </div>
+          <SkillBox  titleId={titleId} />
+          {this.renderProjectSections()}
       </div>
     );
   }

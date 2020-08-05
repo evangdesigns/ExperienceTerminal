@@ -10,31 +10,52 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.enchelada {
-  width: 100%;
-  padding: 0 20%;
-  .inline {
-    display: inline-flex;
-  }
-  .right {
-    position: relative;
-    right: 0;
-  }
-  svg.arrow {
-    fill: #fff;
-    width: 50px;
-    margin-right: 10px;
-  }
-  .head-board {
-    margin: 20px;
-    padding: 20px;
-    background: rgb(30, 30, 30);
-    border-radius: 10px;
-    .board-header{
-      margin-bottom: 30px;
-    }
-    .title-selector-container {
-      margin: 0 50px;
-    }
+svg.arrow {
+  fill: #fff;
+  width: 50px;
+  margin-right: 10px;
 }
+.head-board {
+  margin: 20px;
+  padding: 20px;
+  background: rgb(30, 30, 30);
+  border-radius: 10px;
+  .board-header{
+    margin-bottom: 30px;
+  }
+  .title-selector-container {
+    margin: 0 50px;
+  }
+}
+
+//Desktops, large screens
+@media screen and (max-width: 1200px) {
+
+}
+//Small screens, laptops
+@media screen and (max-width: 1024px) {
+
+}
+
+//iPads, Tablets
+@media screen and (max-width: 768px) {
+
+}
+
+//Mobile devices
+@media screen and (max-width: 500px) {
+  .enchelada{
+    padding: 0 .5%;
+    svg.arrow {
+      width: 30px;
+      margin-right:5px;
+    }
+    .head-board {
+      margin: 10px;
+      padding: 10px;
+      .title-selector-container {
+        margin: 0 30px;
+      }
+    }
+  }
 }

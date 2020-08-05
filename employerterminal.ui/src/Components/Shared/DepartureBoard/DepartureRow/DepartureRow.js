@@ -1,7 +1,6 @@
 import React from 'react';
 import DepartureLetter from '../DepartureLetter/DepartureLetter';
 import { splitTheDifference } from '../../../../helpers/utilities/makeADifference';
-import './DepartureRow.scss';
 
 class DepartureRow extends React.Component {
 
@@ -14,7 +13,7 @@ class DepartureRow extends React.Component {
 
   render () {
     const letters  = this.getLetters();
-    const buildRow = letters.map((letter) => <DepartureLetter letter={letter}/>)
+    const buildRow = letters.map((letter, index) => <DepartureLetter key={index} inLetter={letter}/>)
     return (
       <div className="DepartureRow d-flex justify-content-center">
       {buildRow}

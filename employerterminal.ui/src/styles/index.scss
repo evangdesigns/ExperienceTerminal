@@ -8,52 +8,72 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+h1,h2,h3,h4 {margin:0}
+.radio-container {
+  position: relative;
+  top: -8px;
+  width: 100%;
+  .job-title {
+    margin: 0;
+    font-size: large;
+    position: absolute;
+    bottom: 80px;
+    font-weight: 600;
+    z-index: 0;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+  }
+}
+.radio-button {
+  cursor: pointer;
+  position: relative;
+}
+.radio-base {
+  position: relative;
+  z-index: 1;
+  height: 25px;
+  width: 25px;
+  padding: 5px;
+  border-radius: 100px;
+  background-color: white;
+}
+.radio-dot {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  transition: all .75s ease-in-out;
+}
+.selected {
+  background: #ff0000;
 
-  .radio-container {
-    position: relative;
-    top: -8px;
-    width: 100%;
-    .job-title {
-      margin: 0;
-      font-size: large;
-      position: absolute;
-      bottom: 80px;
-      font-weight: 600;
-      z-index: 0;
-      transform: rotate(-45deg);
-      -webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-      -o-transform: rotate(-45deg);
-    }
-  }
-  .radio-button {
-    cursor: pointer;
-    position: relative;
-  }
-  .radio-base {
-    position: relative;
-    z-index: 1;
-    height: 25px;
-    width: 25px;
-    padding: 5px;
-    border-radius: 100px;
-    background-color: white;
-  }
-  .radio-dot {
-    position: relative;
-    z-index: 10;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    transition: all .75s ease-in-out;
-  }
-  .selected {
-    background: #ff0000;
+}
+.unselected {
+  -webkit-transform: scale(0.1);
+  -ms-transform: scale(0.1);
+  transform: scale(0.1);
+}
 
-  }
-  .unselected {
-    -webkit-transform: scale(0.1);
-    -ms-transform: scale(0.1);
-    transform: scale(0.1);
-  }
+//Desktops, large screens
+@media screen and (max-width: 1200px) {
+
+}
+//Small screens, laptops
+@media screen and (max-width: 1024px) {
+
+}
+
+//iPads, Tablets
+@media screen and (max-width: 768px) {
+
+}
+
+//Mobile devices
+@media screen and (max-width: 500px) {
+
+}
+

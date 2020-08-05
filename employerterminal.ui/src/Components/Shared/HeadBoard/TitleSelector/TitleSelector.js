@@ -1,5 +1,5 @@
 import React from 'react';
-import RadioSelector from './RadioSelection/RadioSelection';
+import RadioSelector from '../../RadioSelection/RadioSelection';
 import './TitleSelector.scss';
 
 class TitleSelector extends React.Component {
@@ -29,10 +29,10 @@ class TitleSelector extends React.Component {
       } else if (selected === 'Graphic Designer') {
         return '25%'
       } else if (selected === 'Web Developer') {
-        return '49%'
+        return '50%'
       } else if (selected === 'Marketeer') {
         return '74%'
-      } else if (selected === 'UI/UX Designer') {
+      } else if (selected === 'UX UI Designer') {
         return '98%'
       }
     }
