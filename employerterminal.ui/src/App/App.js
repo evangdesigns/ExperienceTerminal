@@ -36,7 +36,7 @@ class App extends React.PureComponent {
       <div className="App">
         <Container>
           <HeadBoard titles={titles} selectedTitle={selectedTitle} titleChange={this.titleChange} />
-          {/* <TitlePage selectedTitle={selectedTitle} titleId={selectedTitleId}/> */}
+          <TitlePage selectedTitle={selectedTitle} titleId={selectedTitleId}/>
         </Container>
     </div>
     );

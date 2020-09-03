@@ -5,7 +5,7 @@ margin:.5%;
     width: 100%;
     text-align: center;
     position: relative;
-    font-size: 2vw;
+    font-size: 28pt;
     text-transform:uppercase;
   }
 
@@ -110,7 +110,11 @@ margin:.5%;
 
 //Desktops, large screens
 @media screen and (max-width: 1200px) {
-
+.DepartureLetter {
+  span.letter {
+    font-size: 25pt;
+  }
+}
 }
 //Small screens, laptops
 @media screen and (max-width: 1024px) {

@@ -2,7 +2,6 @@
 @import '../styles/index.scss';
 @import '../styles/variables';
 .App {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,8 +17,9 @@ svg.arrow {
 .head-board {
   margin: 20px;
   padding: 20px;
-  background: rgb(30, 30, 30);
+  background:$black;
   border-radius: 10px;
+  color: $white;
   .board-header{
     margin-bottom: 30px;
   }

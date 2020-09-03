@@ -1,11 +1,13 @@
 ﻿<Properties StartupConfiguration="{0BBEEDEA-2DC6-4AC2-A8FD-A27D8EB8DAEC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="EmployerTerminal/DataAccess/ProjectRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="EmployerTerminal/DataAccess/TitleRepository.cs">
     <Files>
       <File FileName="EmployerTerminal/DataAccess/ProjectRepository.cs" Line="10" Column="1" />
-      <File FileName="EmployerTerminal/Controllers/ProjectController.cs" Line="1" Column="1" />
-      <File FileName="EmployerTerminal/Models/ProjectSection.cs" Line="1" Column="1" />
-      <File FileName="EmployerTerminal/DataAccess/ProjectSectionRepository.cs" Line="39" Column="1" />
-      <File FileName="EmployerTerminal/Controllers/ProjectSectionController.cs" Line="1" Column="1" />
+      <File FileName="EmployerTerminal/Controllers/ProjectController.cs" />
+      <File FileName="EmployerTerminal/Models/ProjectSection.cs" />
+      <File FileName="EmployerTerminal/DataAccess/ProjectSectionRepository.cs" />
+      <File FileName="EmployerTerminal/Controllers/ProjectSectionController.cs" />
+      <File FileName="EmployerTerminal/DataAccess/TitleRepository.cs" Line="1" Column="1" />
+      <File FileName="EmployerTerminal/DataAccess/SkillRepository.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,7 +16,7 @@
             <Node name="EmployerTerminal" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="DataAccess" expanded="True">
-                <Node name="ProjectRepository.cs" selected="True" />
+                <Node name="TitleRepository.cs" selected="True" />
               </Node>
               <Node name="Models" expanded="True" />
             </Node>
