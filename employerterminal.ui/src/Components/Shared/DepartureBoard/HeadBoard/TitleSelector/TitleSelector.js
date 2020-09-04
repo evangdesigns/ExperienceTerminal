@@ -25,15 +25,15 @@ class TitleSelector extends React.Component {
     const { titles } = this.props;
     const flowPercent = () => {
       if (selected === 'Jack of All Trades') {
-        return '0%'
+        return '10%'
       } else if (selected === 'Graphic Designer') {
-        return '25%'
+        return '30%'
       } else if (selected === 'Web Developer') {
         return '50%'
       } else if (selected === 'Marketeer') {
-        return '74%'
+        return '70%'
       } else if (selected === 'UX UI Designer') {
-        return '98%'
+        return '90%'
       }
     }
     return (
@@ -41,7 +41,7 @@ class TitleSelector extends React.Component {
         <div className="behind-block">
           <div className="flow-line" style={{width: flowPercent()}}></div>
 
-          <div className="radio-container d-flex justify-content-between">
+          <div className="radio-container d-flex justify-content-around">
           {titles.map(title => {
           if (selected !== title.title_Name)
             return <RadioSelector key={title.title_Id} id={title.title_Name} title={title} changeStatus={this.changeStatus} status='unselected' />

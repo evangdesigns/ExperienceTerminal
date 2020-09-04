@@ -17,13 +17,12 @@ class HeadBoard extends React.Component {
             <Row>
               <Col lg={2}><Arrow className="arrow"/></Col>
               <Col>
-              <h1 className="align-middle">Employer Terminal</h1>
-              <p className="align-middle">Arrivals</p>
+              <h1 className="align-middle">Arrivals</h1>
               </Col>
             </Row>
           </Col>
           <Col>
-            <h1 className="text-right">Welcome To My Portfolio</h1>
+            <h1 className="text-right">Employer Terminal</h1>
           </Col>
         </Row>
         <Row>
