@@ -34,8 +34,8 @@ class ProjectSection extends React.Component {
     console.log()
     if (section.project_section_id !== 25) {
       return (
-        projects.map(project => <Projects key={project.project_id} project={project} />)
-      )
+        projects.map(project =><Projects key={project.project_id} project={project} />
+      ))
     } else {
       return(<Bio project={projects[0]} />);
     }
@@ -46,7 +46,9 @@ class ProjectSection extends React.Component {
     return (
       <div className="ProjectSection">
         <TitleBoard title={section.project_section_name} />
+        <div className="d-flex flex-wrap justify-content-center">
         {this.renderProjects()}
+        </div>
       </div>
     );
   }

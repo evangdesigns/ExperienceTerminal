@@ -1,0 +1,29 @@
+@import '../../../styles/index.scss';
+
+.Project {
+  width: 45%;
+  color: $black;
+  margin: 10px;
+  img{
+    width: 100%;
+  }
+}
+
+//Desktops, large screens
+@media screen and (max-width: 1200px) {
+
+}
+//Small screens, laptops
+@media screen and (max-width: 1024px) {
+
+}
+
+//iPads, Tablets
+@media screen and (max-width: 768px) {
+
+}
+
+//Mobile devices
+@media screen and (max-width: 500px) {
+
+}
