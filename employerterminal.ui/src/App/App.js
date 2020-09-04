@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import HeadBoard from '../Components/Shared/HeadBoard/HeadBoard';
+import HeadBoard from '../Components/Shared/DepartureBoard/HeadBoard/HeadBoard';
 import TitlePage from '../Components/Pages/TitlePage/TitlePage';
 
 import { getAllTitles, getTitleId } from '../helpers/data/titles';

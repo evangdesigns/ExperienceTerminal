@@ -1,0 +1,13 @@
+@import '../../../styles/variables';
+
+.Bio {
+  color: $black;
+  text-align: justify;
+  font-size: 18px;
+  img {
+    width: 200px;
+    border-radius: 100px;
+    float: left;
+    margin: 0 10px 2px;
+  }
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 import './SkillBox.scss';
-import { Container } from 'react-bootstrap';
 
 class Skill extends React.Component {
 state = {

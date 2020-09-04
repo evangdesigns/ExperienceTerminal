@@ -1,9 +1,10 @@
 import React from 'react';
-import DepartureBoard from '../DepartureBoard/DepartureBoard';
+import DepartureBoard from '../DepartureBoard';
 import TitleSelector from './TitleSelector/TitleSelector';
-import RadioSelection from '../RadioSelection/RadioSelection';
-import { ReactComponent as Arrow } from '../../../images/icons/arrow.svg';
+import { ReactComponent as Arrow } from '../../../../images/icons/arrow.svg';
 import { Row, Col, Jumbotron } from 'react-bootstrap';
+
+
 
 class HeadBoard extends React.Component {
 
@@ -14,7 +15,7 @@ class HeadBoard extends React.Component {
         <Row className="board-header d-flex flex-wrap justify-content-between">
           <Col inline>
             <Row>
-              <Col lg={2}><Arrow className="arrow"/><img src="src/images/icons/arrow.svg" alt="test"/></Col>
+              <Col lg={2}><Arrow className="arrow"/></Col>
               <Col>
               <h1 className="align-middle">Employer Terminal</h1>
               <p className="align-middle">Arrivals</p>
@@ -23,7 +24,6 @@ class HeadBoard extends React.Component {
           </Col>
           <Col>
             <h1 className="text-right">Welcome To My Portfolio</h1>
-            <p className="text-right">Pick A Stop.</p>
           </Col>
         </Row>
         <Row>

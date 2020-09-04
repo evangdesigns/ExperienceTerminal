@@ -1,5 +1,6 @@
 import React from 'react';
 import TitleBoard from '../TitleBoard/TitleBoard';
+import Bio from '../../Pages/Bio/Bio';
 import Projects from '../Project/Project';
 import { getProjectsBySectionId } from '../../../helpers/data/projects';
 
@@ -29,12 +30,14 @@ class ProjectSection extends React.Component {
 
   renderProjects = () => {
     const { projects } = this.state;
-    if (projects) {
+    const { section } = this.props;
+    console.log()
+    if (section.project_section_id !== 25) {
       return (
         projects.map(project => <Projects key={project.project_id} project={project} />)
       )
     } else {
-      return(null);
+      return(<Bio project={projects[0]} />);
     }
   }
 
