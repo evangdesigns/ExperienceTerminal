@@ -6,7 +6,6 @@ class Bio extends React.Component {
 
   render () {
     const { project } = this.props;
-    console.log(project)
     return (
       <Container className="Bio">
         <Row>

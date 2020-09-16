@@ -31,7 +31,6 @@ class ProjectSection extends React.Component {
   renderProjects = () => {
     const { projects } = this.state;
     const { section } = this.props;
-    console.log()
     if (section.project_section_id !== 25) {
       return (
         projects.map(project =><Projects key={project.project_id} project={project} />
