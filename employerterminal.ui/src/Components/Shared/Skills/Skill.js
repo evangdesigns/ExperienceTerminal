@@ -21,7 +21,7 @@ state = {
     const { show } = this.state;
     return (
       <div className="SkillBox">
-        <div dangerouslySetInnerHTML={{__html: skill.svg_icon}} onMouseOver={this.toggleSpeechBubble} onMouseOut={this.toggleSpeechBubble}></div>
+        <img src={`https://github.com/evangdesigns/EmployerTerminal/blob/master/employerterminal.ui/src/images/icons/skills/${skill.svg_icon}.png?raw=true`} onMouseOver={this.toggleSpeechBubble} onMouseOut={this.toggleSpeechBubble} alt={skill.skill_name}/>
         { show ? <div className="speech-bubble text-center"><div className="arrow top"></div>{skill.skill_name}</div> : null }
       </div>
     );
