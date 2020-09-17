@@ -38,7 +38,6 @@ class TitlePage extends React.Component {
 
   render () {
     const { selectedTitle, titleId } = this.props;
-    const { projectSections } = this.state;
     return (
       <div className="TitlePage">
         <DirectiveSign titleId={titleId} selectedTitle={selectedTitle}/>

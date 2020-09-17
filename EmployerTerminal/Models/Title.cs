@@ -9,5 +9,6 @@ namespace EmployerTerminal.Models
     {
         public int Title_Id { get; set; }
         public string Title_Name { get; set; }
+        public string Title_Icon { get; set; }
     }
 }

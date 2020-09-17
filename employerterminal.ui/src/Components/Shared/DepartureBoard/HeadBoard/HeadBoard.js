@@ -1,7 +1,7 @@
 import React from 'react';
 import DepartureBoard from '../DepartureBoard';
 import TitleSelector from './TitleSelector/TitleSelector';
-import { ReactComponent as Arrow } from '../../../../images/icons/arrow.svg';
+import { ReactComponent as Logo } from '../../../../images/logo.svg';
 import { Row, Col, Jumbotron } from 'react-bootstrap';
 
 
@@ -15,7 +15,7 @@ class HeadBoard extends React.Component {
         <Row className="board-header d-flex flex-wrap justify-content-between">
           <Col inline>
             <Row>
-              <Col lg={2}><Arrow className="arrow"/></Col>
+              <Col className="pr-0" lg={2}><Logo className="logo"/></Col>
               <Col>
               <h1 className="align-middle">Arrivals</h1>
               </Col>

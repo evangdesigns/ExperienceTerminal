@@ -8,14 +8,9 @@ class TitleBoard extends React.Component {
     return (
       <Jumbotron bsPrefix="head-board">
         <Row>
-        {/* <Col xs={1} className="align-middle text-center align-content-center justify-content-center">
-          <RadioSelector status="selected" title={""} />
-        </Col> */}
-        <Col>
-          <h2 className="text-center">{title.toUpperCase()}</h2>
-        </Col>
-        {/* <Col xs={1}>
-        </Col> */}
+          <Col>
+            <h2 className="text-center">{title.toUpperCase()}</h2>
+          </Col>
         </Row>
       </Jumbotron>
     );

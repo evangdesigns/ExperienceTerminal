@@ -14,9 +14,9 @@ const getSkillsByTitle = (titleId) => new Promise((resolve, reject) => {
 });
 
 const getSkillsByProjectSection = (projectSectionId) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/project/${projectSectionId}`)
+  axios.get(`${baseUrl}/skills/project/${projectSectionId}`)
     .then((result) => resolve(result.data))
     .catch(error => reject(error))
 });
 
-export { getAllSkills, getSkillsByTitle, getSkillsByProjectSection,  };
+export { getAllSkills, getSkillsByTitle, getSkillsByProjectSection };

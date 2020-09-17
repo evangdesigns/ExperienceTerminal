@@ -1,0 +1,32 @@
+@import '../../../styles/index.scss';
+@import '../../../styles/variables.scss';
+
+.ProjectSection {
+  table {
+    width: 100%;
+    background-color: $black;
+    border-radius: 10px;
+    border-top: none !important;
+  }
+  thead,tr,th,td {
+    border: none !important;
+  }
+  td {
+    img {
+    height: 30px;
+    background-color:$white;
+    color:$black;
+    }
+  }
+  svg.white {
+    fill:$white;
+    margin-bottom:5px;
+    width: 30px;
+    height: 30px;
+  }
+  h2 {
+    text-transform:uppercase;
+    font-weight: 300;
+    font-size: + 2.5rem;
+  }
+}
