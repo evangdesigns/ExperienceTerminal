@@ -1,0 +1,31 @@
+@import '../../../styles/index.scss';
+@import '../../../styles/variables.scss';
+
+.DirectiveSign {
+  background-color: $yellow;
+  color: $black;
+  border: 5px solid $black;
+  padding: 0 20px 20px;
+  margin: 20px 70px;
+  .upperDeck {
+    border-bottom: 3px solid $black;
+    margin: 0 -20px;
+    border-collapse: collapse;
+  }
+  .hrzArrow {
+    width:15%;
+  }
+  .vrtArrow {
+    width:90%;
+  }
+  h1, h3 {
+    font-weight: bolder;
+  }
+  .bars {
+    svg {
+      position: relative;
+      background-color: grey;
+      margin-top:-20px;
+    }
+  }
+}

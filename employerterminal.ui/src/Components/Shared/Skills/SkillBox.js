@@ -36,18 +36,15 @@ class SkillBox extends React.Component {
     const { skills } = this.state;
     const titleSkills = skills.map(skill => <Skill key={skill.skill_id} skill={skill}/>)
     return (
-      <div>
-        <TitleBoard title="Technologies"/>
-        <Container>
-          <Row className="justify-content-center">
-            <Col lg={10} sm={12}>
-              <div className="skill-box d-flex flex-wrap justify-content-center">
-                {titleSkills}
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+      <Container>
+        <Row className="justify-content-center">
+          <Col sm={12} className="px-0">
+            <div className="skill-box d-flex flex-wrap justify-content-center">
+              {titleSkills}
+            </div>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

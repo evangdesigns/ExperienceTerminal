@@ -1,7 +1,5 @@
 import React from 'react';
 import { Jumbotron, Col, Row } from 'react-bootstrap';
-import DepartureBoard from '../../Shared/DepartureBoard/DepartureBoard';
-import RadioSelector from '../../Shared/RadioSelection/RadioSelection';
 
 class TitleBoard extends React.Component {
 

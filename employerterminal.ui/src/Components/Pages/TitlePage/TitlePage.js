@@ -1,5 +1,5 @@
 import React from 'react';
-import SkillBox from '../../Shared/Skills/SkillBox';
+import DirectiveSign from '../../Shared/DirectiveSign/DirectiveSign';
 import ProjectSection from '../../Shared/ProjectSection/ProjectSection';
 import { getProjectSectionsByTitleId } from '../../../helpers/data/projects';
 
@@ -22,7 +22,7 @@ class TitlePage extends React.Component {
 
   getProjectsSections = (titleId) => {
     getProjectSectionsByTitleId(titleId)
-    .then(projectSections=> this.setState({ projectSections : projectSections }))
+    .then(projectSections => this.setState({ projectSections : projectSections }))
   }
 
   renderProjectSections = () => {
@@ -37,11 +37,11 @@ class TitlePage extends React.Component {
   }
 
   render () {
-    const { titleId } = this.props;
+    const { selectedTitle, titleId } = this.props;
     const { projectSections } = this.state;
     return (
       <div className="TitlePage">
-          <SkillBox  titleId={titleId} />
+        <DirectiveSign titleId={titleId} selectedTitle={selectedTitle}/>
           {this.renderProjectSections()}
       </div>
     );
