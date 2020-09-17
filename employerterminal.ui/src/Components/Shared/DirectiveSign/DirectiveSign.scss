@@ -11,6 +11,9 @@
     border-bottom: 3px solid $black;
     margin: 0 -20px;
     border-collapse: collapse;
+    .titleIcon {
+      width: 50px;
+    }
   }
   .hrzArrow {
     width:15%;
