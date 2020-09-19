@@ -1,11 +1,12 @@
 import React from 'react';
+
 import SkillBox from '../Skills/SkillBox';
 import { ReactComponent as Arrow} from '../../../images/icons/icon_arrow.svg';
 import { Row, Col, Container, Media } from 'react-bootstrap';
-
 import { getTitle } from '../../../helpers/data/titles';
 
 import './DirectiveSign.scss';
+import { Link } from 'react-router-dom';
 
 class DirectiveSign extends React.Component {
   state = {
@@ -54,7 +55,7 @@ class DirectiveSign extends React.Component {
   }
 
   render () {
-    const { selectedTitle, titleId } = this.props;
+    const { selectedTitle, titleId, routeWriter } = this.props;
     const { next, prev } = this.state;
     return (
       <div>
@@ -69,21 +70,25 @@ class DirectiveSign extends React.Component {
         <Container bsPrefix="DirectiveSign">
         <Row className="upperDeck py-3">
           <Col>
+          <Link to={routeWriter(prev.title_Name)}>
             <Media>
               <Arrow className="align-self-start mr-3 hrzArrow" transform="rotate(180)" />
               <Media.Body>
               <h3><img src={`https://github.com/evangdesigns/EmployerTerminal/blob/master/employerterminal.ui/src/images/icons/title/${prev.title_Icon}.png?raw=true`} alt=" " width={50} /> {prev.title_Name}</h3>
               </Media.Body>
             </Media>
+            </Link>
           </Col>
           <Col>
+          <Link to={routeWriter(next.title_Name)}>
           <Media>
             <Media.Body>
-
             <h3 className="text-right"><img src={`https://github.com/evangdesigns/EmployerTerminal/blob/master/employerterminal.ui/src/images/icons/title/${next.title_Icon}.png?raw=true`}  alt=" " width={50} /> {next.title_Name}</h3>
             </Media.Body>
-            <Arrow className="align-self-start ml-3 hrzArrow" />
+
+              <Arrow className="align-self-start ml-3 hrzArrow" />
           </Media>
+          </Link>
           </Col>
         </Row>
         <Row>

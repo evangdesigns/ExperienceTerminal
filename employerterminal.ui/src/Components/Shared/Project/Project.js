@@ -23,12 +23,6 @@ class Project extends React.Component {
         <td className="px-4">{project.project_name}</td>
         <td className="text-right px-4"><a href="#" ><View className="white"/></a></td>
       </tr>
-      // <div className="Project" onMouseEnter={this.onMouseEnterHandler} onMouseLeave={this.onMouseLeaveHandler} >
-      //   <div className="inner">
-      //   {hover ? <div className="para">{project.project_description}</div> : null}
-      //   <img src={`${project.project_image_url}?raw=true`} alt={project.project_name} />
-      //   </div>
-      // </div>
     );
   }
 }

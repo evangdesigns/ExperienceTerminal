@@ -1,5 +1,4 @@
 import React from 'react';
-import Bio from '../../Pages/Bio/Bio';
 import Projects from '../Project/Project';
 import Skill from '../Skills/Skill';
 import { getProjectsBySectionId } from '../../../helpers/data/projects';
@@ -25,8 +24,8 @@ class ProjectSection extends React.Component {
     if (nextProps.sectionId !== sectionId ) {
       this.getProjectsSections(nextProps.sectionId);
       this.getProjectSkills(nextProps.sectionId)
-      }
     }
+  }
 
   getProjects = (sectionId) => {
     getProjectsBySectionId(sectionId)
@@ -40,14 +39,7 @@ class ProjectSection extends React.Component {
 
   renderProjects = () => {
     const { projects } = this.state;
-    const { section } = this.props;
-    if (section.project_section_id !== 25) {
-      return (
-        projects.map(project => <Projects key={project.project_id} project={project} />
-      ))
-    } else {
-      return(<Bio project={projects[0]} />);
-    }
+      return (projects.map(project => <Projects key={project.project_id} project={project} />))
   }
 
   render () {
