@@ -3,53 +3,49 @@ import RadioSelector from '../../../RadioSelection/RadioSelection';
 import './TitleSelector.scss';
 
 class TitleSelector extends React.Component {
-  state = {
-    selected: 'Jack of All Trades',
-  }
 
-  changeStatus = (newTitle) => {
-    const { titleChange } = this.props;
-    if (newTitle !== '') {
-      this.setState({selected : newTitle})
-      titleChange(newTitle);
+  routeWriter = (title) => {
+    if (title  === 'Graphic Designer') {
+      return ('/graphic-design')
+    } else if (title  === 'Web Developer') {
+      return ('/web-design')
+    } else if (title  === 'Marketeer') {
+      return ('/marketing')
+    }  else if (title  === 'UX UI Designer') {
+      return ('/ux-ui-design')
+    }  else if (title  === 'Jack of All Trades') {
+      return ('/')
     }
-  }
-
-  componentDidMount() {
-    const { selectedTitle } = this.props;
-    this.setState({selected: selectedTitle})
   }
 
   render () {
-    const { selected } = this.state;
-    const { titles } = this.props;
+    const { selectedTitle, titles, titleChange } = this.props;
     const flowPercent = () => {
-      if (selected === 'Jack of All Trades') {
+      if (selectedTitle === 'Jack of All Trades') {
         return '10%'
-      } else if (selected === 'Graphic Designer') {
+      } else if (selectedTitle === 'Graphic Designer') {
         return '30%'
-      } else if (selected === 'Web Developer') {
+      } else if (selectedTitle === 'Web Developer') {
         return '50%'
-      } else if (selected === 'Marketeer') {
+      } else if (selectedTitle === 'Marketeer') {
         return '70%'
-      } else if (selected === 'UX UI Designer') {
+      } else if (selectedTitle === 'UX UI Designer') {
         return '90%'
       }
     }
+
     return (
       <div className="TitleSelector">
         <div className="behind-block">
           <div className="flow-line" style={{width: flowPercent()}}></div>
-
           <div className="radio-container d-flex justify-content-around">
           {titles.map(title => {
-          if (selected !== title.title_Name)
-            return <RadioSelector key={title.title_Id} id={title.title_Name} title={title} changeStatus={this.changeStatus} status='unselected' />
-            return <RadioSelector key={title.title_Id} id={title.title_Name} title={title} changeStatus={this.changeStatus} status='selected' />
+          if (selectedTitle !== title.title_Name)
+            return <RadioSelector key={title.title_Id} id={title.title_Name} title={title} titleChange={titleChange} routeWriter={this.routeWriter} status='unselected' />
+            return <RadioSelector key={title.title_Id} id={title.title_Name} title={title} titleChange={titleChange} routeWriter={this.routeWriter} status='selected' />
             }
           )}
           </div>
-
         </div>
       </div>
     );

@@ -48,6 +48,7 @@ namespace EmployerTerminal.DataAccess
             using (var db = new SqlConnection(ConnectionString))
             {
                 var parameter = new { Title = title };
+
                 var titleId = db.QueryFirst<int>(sql, parameter);
                 return titleId;
             }

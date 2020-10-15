@@ -1,3 +1,6 @@
+@import '../../../../../styles/index.scss';
+@import '../../../../../styles/variables';
+
 .TitleSelector {
   display:flex;
   position:relative;
@@ -13,6 +16,8 @@
       margin: 0;
       font-size: large;
       position: absolute;
+      text-decoration: none;
+      color:$white;
       bottom: 80px;
       font-weight: 600;
       z-index: 0;
@@ -40,6 +45,7 @@
     height:8px;
     border-radius: 100px;
     transition: width .5s ease-in-out;
+    pointer-events:none;
   }
 }
 

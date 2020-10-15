@@ -13,4 +13,10 @@ const getProjectsBySectionId = (sectionId) => new Promise((resolve, reject) => {
     .catch(error => reject(error))
 });
 
-export { getProjectSectionsByTitleId, getProjectsBySectionId };
+const getProjectById = (projectId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/projects/project/${projectId}`)
+    .then((result) => resolve(result.data))
+    .catch(error => reject(error))
+});
+
+export { getProjectSectionsByTitleId, getProjectsBySectionId, getProjectById };

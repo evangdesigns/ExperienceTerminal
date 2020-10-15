@@ -1,6 +1,5 @@
 import React from 'react';
 import Skill from './Skill';
-import TitleBoard from '../TitleBoard/TitleBoard';
 import { getAllSkills, getSkillsByTitle } from '../../../helpers/data/skills';
 import './SkillBox.scss';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -15,10 +14,10 @@ class SkillBox extends React.Component {
     this.getSkills(titleId);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(prevProps) {
     const { titleId } = this.props;
-    if (nextProps.titleId !== titleId ) {
-      this.getSkills(nextProps.titleId);
+    if (prevProps.titleId !== titleId ) {
+      this.getSkills(titleId);
       }
     }
 
