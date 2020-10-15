@@ -41,5 +41,20 @@ namespace EmployerTerminal.Controllers
                 return Ok(projects);
             }
         }
+        // GET: api/project/{projectId}
+        [HttpGet("project/{projectId}")]
+        public IActionResult GetProjectById(int projectId)
+        {
+            var project = _projectRepository.GetProjectByProjectId(projectId);
+
+            if (project == null)
+            {
+                return NotFound("No projects by that project Id.");
+            }
+            else
+            {
+                return Ok(project);
+            }
+        }
     }
 }

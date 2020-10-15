@@ -17,17 +17,18 @@ class GraphicDesign extends React.Component {
     this.getProjectsSections(titleId)
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(prevProps) {
     const { titleId } = this.props;
-    if (nextProps.titleId !== titleId ) {
-      this.getProjectsSections(nextProps.titleId);
+    if (prevProps.titleId !== titleId ) {
+      this.getProjectsSections(titleId);
     }
   }
   renderProjectTable = () => {
     const { projectSections } = this.state;
+    const { popModal, toggleModal } = this.props;
     if (projectSections) {
       return (
-        projectSections.map(section => <ProjectSection key={section.project_section_id} section={section} sectionId={section.project_section_id}/>)
+        projectSections.map(section => <ProjectSection key={section.project_section_id} section={section} sectionId={section.project_section_id} popModal={popModal} toggleModal={toggleModal} />)
       )
     } else {
       return(null);

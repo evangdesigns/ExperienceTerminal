@@ -10,8 +10,6 @@ class RadioSelector extends React.Component {
     titleChange(newTitle);
   }
 
-  route
-
   render () {
     const { title, status, routeWriter} = this.props;
     const route = routeWriter(title.title_Name)

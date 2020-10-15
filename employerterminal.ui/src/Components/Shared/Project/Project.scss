@@ -17,6 +17,25 @@
       background-color: $white;
     }
   }
+  .clickOverlay{
+    position: relative;
+    width:100%;
+    height:100%;
+    background-color: blue;
+    z-index:2;
+    &:hover {
+      opacity: .5;
+    }
+    .underlay {
+      position: relative;
+      z-index:1;
+      top:-3rem;
+      svg {
+        pointer-events:none;
+        z-index:-1;
+      }
+    }
+  }
 }
 
 //Desktops, large screens

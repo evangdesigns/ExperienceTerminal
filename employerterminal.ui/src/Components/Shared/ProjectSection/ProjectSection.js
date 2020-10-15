@@ -19,11 +19,11 @@ class ProjectSection extends React.Component {
     this.getProjectSkills(sectionId)
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(prevProps) {
     const { sectionId } = this.props;
-    if (nextProps.sectionId !== sectionId ) {
-      this.getProjectsSections(nextProps.sectionId);
-      this.getProjectSkills(nextProps.sectionId)
+    if (prevProps.sectionId !== sectionId ) {
+      this.getProjectsSections(sectionId);
+      this.getProjectSkills(sectionId)
     }
   }
 
@@ -39,7 +39,8 @@ class ProjectSection extends React.Component {
 
   renderProjects = () => {
     const { projects } = this.state;
-      return (projects.map(project => <Projects key={project.project_id} project={project} />))
+    const { popModal, toggleModal } = this.props;
+      return (projects.map(project => <Projects key={project.project_id} project={project} popModal={popModal} toggleModal={toggleModal} />))
   }
 
   render () {
@@ -50,7 +51,7 @@ class ProjectSection extends React.Component {
         <Table striped size="sm" className="ProjectSection" variant="dark">
           <thead>
             <tr>
-              <th colspan="2" className="align-middle p-3"><h2>{section.project_section_name}</h2></th>
+              <th colSpan={2} className="align-middle p-3"><h2>{section.project_section_name}</h2></th>
               <th className="align-middle text-right p-3 float-right">
                 <div className="d-flex align-content-end">
                   {projectSkills.map(skill => <Skill key={skill.skill_id} skill={skill}/>)}

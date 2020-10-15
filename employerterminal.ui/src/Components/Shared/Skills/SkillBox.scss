@@ -2,6 +2,16 @@
   img {
     width:50px;
     margin:5px;
+    animation: 1s ease-in-out 0s 1 grow;
+  }
+}
+
+@keyframes grow {
+  from{
+    transform: scale(0);
+  }
+  to {
+    transform: scale(100%);
   }
 }
 

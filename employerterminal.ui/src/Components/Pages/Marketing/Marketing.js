@@ -17,10 +17,10 @@ class Marketing extends React.Component {
     this.getProjectsSections(titleId)
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(prevProps) {
     const { titleId } = this.props;
-    if (nextProps.titleId !== titleId ) {
-      this.getProjectsSections(nextProps.titleId);
+    if (prevProps.titleId !== titleId ) {
+      this.getProjectsSections(titleId);
     }
   }
   renderProjectTable = () => {

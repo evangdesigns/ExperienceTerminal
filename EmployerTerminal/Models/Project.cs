@@ -9,7 +9,6 @@ namespace EmployerTerminal.Models
     {
         public int Project_id { get; set; }
         public int Project_section_id { get; set; }
-        public int Project_skills_id { get; set; }
         public string Project_name { get; set; }
         public string Project_description { get; set; }
         public string Project_image_url { get; set; }

@@ -13,7 +13,7 @@ class HeadBoard extends React.Component {
     return (
       <Jumbotron bsPrefix="head-board">
         <Row className="board-header d-flex flex-wrap justify-content-between">
-          <Col inline>
+          <Col>
             <Row>
               <Col className="pr-0" lg={2}><Logo className="logo"/></Col>
               <Col>

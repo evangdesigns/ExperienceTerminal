@@ -34,7 +34,7 @@ namespace EmployerTerminal.DataAccess
             var sql = @"SELECT 
             skills_table.skill_id,
             skills_table.skill_name,
-            skills_table.svg_icon
+            skills_table.skill_icon
             FROM title_skills_table
             JOIN skills_table ON skills_table.skill_id = title_skills_table.skill_id 
             JOIN title_table ON title_table.title_id = title_skills_table.title_id
@@ -58,7 +58,7 @@ namespace EmployerTerminal.DataAccess
             var sql = @"SELECT 
             skills_table.skill_id,
             skills_table.skill_name,
-            skills_table.svg_icon
+            skills_table.skill_icon
             FROM project_skills_table
             JOIN skills_table ON skills_table.skill_id = project_skills_table.skill_id 
             JOIN project_section_table ON project_section_table.project_section_id = project_skills_table.project_section_id
@@ -76,5 +76,6 @@ namespace EmployerTerminal.DataAccess
                 return skills;
             }
         }
+
     }
 }

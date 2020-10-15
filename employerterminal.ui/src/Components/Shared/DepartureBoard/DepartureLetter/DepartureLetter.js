@@ -10,42 +10,31 @@ class DepartureLetter extends React.Component {
   }
 
   alphabetSoup = (ltr) => {
-    const result = alphaArray.indexOf(ltr.toUpperCase())
+    let result = alphaArray.indexOf(ltr.toUpperCase())
     return result;
   }
 
   flipRecurser = () => {
-    if (this.alphabetSoup(this.state.letter) < this.alphabetSoup(this.props.inLetter)) {
-        this.setState({ letter: alphaArray[this.alphabetSoup(this.state.letter) + 1] }, () => {
-        })
-        setInterval(this.flipRecurser, 100)
-    } else if ((this.alphabetSoup(this.state.letter) > this.alphabetSoup(this.props.inLetter))){
-      this.setState({ letter: alphaArray[this.alphabetSoup(this.state.letter) - 1] }, () => {
-      })
-      setInterval(this.flipRecurser, 100)
+    const outgoing = this.alphabetSoup(this.state.letter);
+    const incoming = this.alphabetSoup(this.props.inLetter);
+    //if the index of the current state is less than the incoming letter
+    if ( incoming < outgoing && outgoing !== 0 ) {
+      this.setState({ letter: alphaArray[outgoing - 1] })
+    } else if (incoming > outgoing) {
+      this.setState({ letter: alphaArray[outgoing + 1] })
+      //continually running over and over and over. Which means, this happens on the componentDidMount, so look at the row
+      //state never actully changes? or just resets everytime there's a new title implimented?
+    } else if (incoming === outgoing) {
+      return null
     }
   }
 
-  // flip = () => {
-  //   const { letter } = this.state;
-  //   const { inLetter } = this.props;
-  //   const startPoint = this.alphabetSoup(letter);
-  //   const endPoint = this.alphabetSoup(inLetter);
-  //   console.log(startPoint, endPoint)
-  //   if (startPoint > endPoint ) {
-  //     for(var i = startPoint; i < endPoint + 1; i--) {
-  //       setInterval(() => this.setState({letter: alphaArray[i]}), 500)
-  //     }
-  //   } else if (startPoint < endPoint) {
-  //     setInterval(()=>{
-  //       for(i = startPoint; i < endPoint+1; i++) {
-  //       this.setState({letter: alphaArray[i]})
-  //     }}, 500)
-  //   }
-  // };
-
   componentDidMount() {
-    this.flipRecurser()
+    setInterval(this.flipRecurser, 50)
+  }
+
+  componentDidUpdate() {
+    setInterval(this.flipRecurser, 50)
   }
 
   componentWillUnmount() {

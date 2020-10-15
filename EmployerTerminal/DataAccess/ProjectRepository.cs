@@ -41,5 +41,18 @@ namespace EmployerTerminal.DataAccess
                 return projects;
             }
         }
+
+        public Project GetProjectByProjectId(int projectId)
+        {
+            var sql = "SELECT * FROM project_table WHERE project_id = @projectId";
+
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var parameters = new { ProjectId = projectId };
+
+                var project = db.QueryFirst<Project>(sql, parameters);
+                return project;
+            }
+        }
     }
 }

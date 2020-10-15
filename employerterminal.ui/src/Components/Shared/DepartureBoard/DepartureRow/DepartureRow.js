@@ -3,16 +3,22 @@ import DepartureLetter from '../DepartureLetter/DepartureLetter';
 import { splitTheDifference } from '../../../../helpers/utilities/makeADifference';
 
 class DepartureRow extends React.Component {
-
-  getLetters() {
-    const { letterCount, message } = this.props;
+state = {
+  letters: []
+}
+  getLetters = (letterCount, message) => {
     const arr = Array.from(message);
     const newLetters = splitTheDifference(arr,letterCount)
-    return newLetters;
+    this.setState({letters : newLetters})
+  }
+
+  componentDidMount() {
+    const { letterCount, message } = this.props;
+    this.getLetters(letterCount, message)
   }
 
   render () {
-    const letters  = this.getLetters();
+    const { letters }  = this.state;
     const buildRow = letters.map((letter, index) => <DepartureLetter key={index} inLetter={letter}/>)
     return (
       <div className="DepartureRow d-flex justify-content-center">
