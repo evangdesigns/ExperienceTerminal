@@ -13,6 +13,7 @@ componentDidMount() {
   const { projectId } = this.props;
   getProjectById(projectId)
     .then(project => this.setState({ project : project }));
+  /*get all images accociated with project id*/
 }
 
   render () {
@@ -23,6 +24,7 @@ componentDidMount() {
         <div className="Content">
           <h3 className="closer" onClick={toggleModal}>X</h3>
           <h1 className="modalTitle">{project ? project.project_name : 'Modal Title'} </h1>
+          {/*if more than one image show slider*/}
           <div className="modalImage">
             <img src={project.project_image_url} alt={project.project_name}/>
           </div>
@@ -30,6 +32,7 @@ componentDidMount() {
             <p>{project.project_description}</p>
           </div>
           <div className="modalLinks">
+            {/*if PDF '<a href={require('../Documents/Document.pdf')} target="_blank">Download Pdf</a>'*/}
             {project.project_url ? <a href={project.project_url} rel="noopener noreferrer" target="_blank"><URLico/></a> : null}
             {project.project_git_url ? <a href={project.project_git_url} rel="noopener noreferrer" target="_blank"><GITico/></a> : null}
           </div>
