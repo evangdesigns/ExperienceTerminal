@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import { Document, Page } from 'react-pdf';
 import { ReactComponent as URLico} from '../../../images/icons/icon_website.svg';
 import { ReactComponent as GITico} from '../../../images/icons/icon_GitHub.svg';
 import { getProjectById } from '../../../helpers/data/projects';
