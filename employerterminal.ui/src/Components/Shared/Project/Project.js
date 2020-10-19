@@ -13,8 +13,8 @@ class Project extends React.Component {
   render () {
     const { project } = this.props;
     return (
-      <tr>
-        <td className="px-4" width="100"><img src={project.project_image_url} alt=""/></td>
+      <tr className="Project">
+        <td className="px-4 img-thumbnail" width="100"><img src={project.project_image_url} alt=""/></td>
         <td className="px-4">{project.project_name}</td>
         <td className="text-right px-4"><div className="clickOverlay" id={project.project_id} onClick={this.modalEvent}><View className="white underlay" id={project.project_id}/></div></td>
       </tr>
