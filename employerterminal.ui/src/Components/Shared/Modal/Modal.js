@@ -1,6 +1,5 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import { Document, Page } from 'react-pdf';
 import { ReactComponent as URLico} from '../../../images/icons/icon_website.svg';
 import { ReactComponent as GITico} from '../../../images/icons/icon_GitHub.svg';
 import { getProjectById } from '../../../helpers/data/projects';
@@ -10,7 +9,13 @@ import './Modal.scss';
 class Modal extends React.Component {
   state = {
     project: {},
-    images: []
+    images: [],
+    numPages: null,
+    pageNumber: 1
+  };
+
+  onDocumentLoadSuccess = ({ numPages }) => {
+    this.setState({ numPages });
   }
 
   componentDidMount() {
@@ -44,6 +49,12 @@ class Modal extends React.Component {
           ))}
         </Carousel>
       )
+    // } else if (project.project_url.includes('pdf')){
+    //   return (
+    //     <div className="modalImage">
+    //       <Document file={project.project_url}/>
+    //     </div>
+    //   )
     } else {
       return (
         <div className="modalImage">
@@ -54,7 +65,7 @@ class Modal extends React.Component {
   }
 
   render () {
-    const { project } = this.state;
+    const { project, pageNumber } = this.state;
     const { toggleModal } = this.props;
 
     return (
@@ -67,7 +78,6 @@ class Modal extends React.Component {
             <p>{project.project_description}</p>
           </div>
           <div className="modalLinks">
-            {/*if PDF '<a href={require('../Documents/Document.pdf')} target="_blank">Download Pdf</a>'*/}
             {project.project_url ? <a href={project.project_url} rel="noopener noreferrer" target="_blank"><URLico/></a> : null}
             {project.project_git_url ? <a href={project.project_git_url} rel="noopener noreferrer" target="_blank"><GITico/></a> : null}
           </div>
