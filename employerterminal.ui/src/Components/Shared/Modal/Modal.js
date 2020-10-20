@@ -31,7 +31,7 @@ class Modal extends React.Component {
   imageDisplay = () => {
     const { images, project } = this.state;
     let thumb = project.project_image_url.includes('tmb');
-    let video = project.project_image_url.includes('youtube');
+    let video = project.project_url.includes('youtube');
     if (thumb && images.length > 1) {
       return (
         <Carousel>
@@ -76,7 +76,7 @@ class Modal extends React.Component {
     } else if (video){
       return (
         <div className="modalVideo">
-          <iframe title={project.project_name} src={project.project_image_url} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe title={project.project_name} src={project.project_url} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       )
     } else {
@@ -91,7 +91,7 @@ class Modal extends React.Component {
   render () {
     const { project } = this.state;
     const { toggleModal } = this.props;
-
+    let video = project.project_url.includes('youtube');
     return (
       <div className="ModalBox">
         <div className="Content">
@@ -102,7 +102,7 @@ class Modal extends React.Component {
             <p>{project.project_description}</p>
           </div>
           <div className="modalLinks">
-            {project.project_url ? <a href={project.project_url} rel="noopener noreferrer" target="_blank"><URLico/></a> : null}
+            {project.project_url && !video ? <a href={project.project_url} rel="noopener noreferrer" target="_blank"><URLico/></a> : null}
             {project.project_git_url ? <a href={project.project_git_url} rel="noopener noreferrer" target="_blank"><GITico/></a> : null}
           </div>
           <h4 className="exit text-center" onClick={toggleModal}>CLOSE</h4>
