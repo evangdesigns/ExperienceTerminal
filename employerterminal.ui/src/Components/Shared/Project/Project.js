@@ -16,43 +16,49 @@ class Project extends React.Component {
       .then(images => this.setState({ images : images }));
   }
 
-  sliderRender = () => {
-    const { images } = this.state;
-    const { project } = this.props;
-    if (images && project.project_image_url) {
-      return (
-        <Carousel>
-          <Carousel.Item>
-            <img
-            className="carouselImage"
-            src={project.project_image_url}
-            alt={project.project_name}
-            />
-          </Carousel.Item>
-          {images.map(image => (
-            <Carousel.Item key={image.image_id}>
-              <img
-              className="carouselImage"
-              src={image.image_url}
-              alt={image.image_name}
-              />
-            </Carousel.Item>
-          ))}
-        </Carousel>
-      )
-    } else {
-      return null;
-    }
-  }
+  // sliderRender = () => {
+  //   const { images } = this.state;
+  //   const { project } = this.props;
+  //   let emptyArray = [];
+  //   if (images && project.project_image_url) {
+  //     return (
+  //       <Carousel>
+  //         <Carousel.Item>
+  //           <img
+  //           className="carouselImage"
+  //           src={project.project_image_url}
+  //           alt={project.project_name}
+  //           />
+  //         </Carousel.Item>
+  //         {images.map(image => (
+  //           <Carousel.Item key={image.image_id}>
+  //             <img
+  //             className="carouselImage"
+  //             src={image.image_url}
+  //             alt={image.image_name}
+  //             />
+  //           </Carousel.Item>
+  //         ))}
+  //       </Carousel>
+  //     )
+  //   } else if (images.isArray(emptyArray) && project.project_image_url){
+  //     return(
+
+  //     );
+  //   }
+  // }
 
   render () {
     const { project } = this.props;
-    const { images } = this.state;
     return (
       <>
-         <tr className="Project">
+      <tr className="Project">
        <td colSpan="3">
-          {this.sliderRender()}
+       <img
+            className="projectImage"
+            src={project.project_image_url}
+            alt={project.project_name}
+            />
         </td>
       </tr>
       <tr className="Project">
