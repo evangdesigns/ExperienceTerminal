@@ -3,13 +3,35 @@
 .Project {
   .img-thumbnail {
     margin: 3px;
+    height: 30px;
     border-radius: 0;
     background-color: rgba($color: $white, $alpha: .0);
     text-align: center;
-  }
-  img {
-    height: 30px;
+    img {
+      height: 30px;
     }
+  }
+  .carousel {
+    .carouselImage {
+      width: 100%;
+      padding: 0;
+    }
+
+  }
+  .projectDescription {
+    padding: 20px 20px 0;
+    text-align: justify;
+    text-align-last: center;
+  }
+  .projectLinks {
+    text-align: center;
+    padding-bottom: 20px;
+    svg {
+      width: 75px;
+      height: 75px;
+      fill:$white;
+    }
+  }
   .clickOverlay{
     position: relative;
     width:100%;
