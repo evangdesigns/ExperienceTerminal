@@ -2,7 +2,7 @@
 @import '../../../styles/variables.scss';
 
 .ModalBox {
-  position: fixed;
+  position: absolute;
   z-index:9999999999999;
   background-color: rgba($color: $white, $alpha: .75);
   width:100%;
@@ -23,6 +23,12 @@
       font-weight: 300;
       border-bottom: 1px $white solid;
     }
+    .modalPdf {
+      text-align: center;
+      img {
+        width: 100%;
+      }
+    }
     .modalImage {
       background-color:$white;
       padding: 5%;
@@ -33,13 +39,15 @@
       }
     }
     .modalDescription {
+      margin-top:50px;
       text-align: justify;
       text-align-last: center;
     }
     .modalLinks {
       text-align: center;
       svg {
-      transform: scale(.4);
+        width: 75px;
+        height: 75px;
       }
     }
     .exit {

@@ -9,14 +9,8 @@ import './Modal.scss';
 class Modal extends React.Component {
   state = {
     project: {},
-    images: [],
-    numPages: null,
-    pageNumber: 1
+    images: []
   };
-
-  onDocumentLoadSuccess = ({ numPages }) => {
-    this.setState({ numPages });
-  }
 
   componentDidMount() {
     const { projectId } = this.props;
@@ -28,7 +22,7 @@ class Modal extends React.Component {
 
   imageDisplay = () => {
     const { images, project } = this.state;
-    if (images.length >= 1) {
+    if (images.length > 1) {
       return (
         <Carousel>
           <Carousel.Item>
@@ -49,12 +43,14 @@ class Modal extends React.Component {
           ))}
         </Carousel>
       )
-    // } else if (project.project_url.includes('pdf')){
-    //   return (
-    //     <div className="modalImage">
-    //       <Document file={project.project_url}/>
-    //     </div>
-    //   )
+    } else if (project.project_image_url && project.project_image_url.includes('tmb')){
+      return (
+        <div className="modalPdf">
+          <a href={project.project_url} rel="noopener noreferrer" target="_blank">
+            {images.map(image => <img src={image.image_url} alt={images.image_name}/>)}
+          </a>
+        </div>
+      )
     } else {
       return (
         <div className="modalImage">
@@ -65,7 +61,7 @@ class Modal extends React.Component {
   }
 
   render () {
-    const { project, pageNumber } = this.state;
+    const { project } = this.state;
     const { toggleModal } = this.props;
 
     return (

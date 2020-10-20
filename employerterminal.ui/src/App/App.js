@@ -8,10 +8,7 @@ import Container from 'react-bootstrap/Container';
 import HeadBoard from '../Components/Shared/DepartureBoard/HeadBoard/HeadBoard';
 import DirectiveSign from '../Components/Shared/DirectiveSign/DirectiveSign';
 import Bio from'../Components/Pages/Bio/Bio';
-import GraphicDesign from '../Components/Pages/GraphicDesign/GraphicDesign';
-import WebDesign from '../Components/Pages/WebDesign/WebDesign';
-import Marketing from '../Components/Pages/Marketing/Marketing';
-import UxUiDesign from '../Components/Pages/UxUiDesign/UxUiDesign';
+import TitlePage from '../Components/Pages/TitlePage/TitlePage';
 import Modal from '../Components/Shared/Modal/Modal';
 
 import { getAllTitles, getTitleId } from '../helpers/data/titles';
@@ -116,10 +113,10 @@ class App extends React.PureComponent {
             <DirectiveSign titleId={selectedTitleId} selectedTitle={selectedTitle} titleChange={this.titleChange} routeWriter={this.routeWriter}/>
               <Switch>
                 <Route path="/" exact render={props => <Bio titleId={selectedTitleId}/>}/>
-                <Route path="/graphic-design" exact render={props => <GraphicDesign titleId={selectedTitleId} popModal={this.popModal} toggleModal={this.toggleModal} />} />
-                <Route path="/web-design" exact render={props => <WebDesign titleId={selectedTitleId}/>}/>
-                <Route path="/marketing" exact render={props => <Marketing titleId={selectedTitleId}/>}/>
-                <Route path="/ux-ui-design" exact render={props => <UxUiDesign titleId={selectedTitleId}/>}/>
+                <Route path="/graphic-design" exact render={props => <TitlePage titleId={selectedTitleId} popModal={this.popModal} toggleModal={this.toggleModal} />} />
+                <Route path="/web-design" exact render={props => <TitlePage titleId={selectedTitleId} popModal={this.popModal} toggleModal={this.toggleModal} />}/>
+                <Route path="/marketing" exact render={props => <TitlePage titleId={selectedTitleId} popModal={this.popModal} toggleModal={this.toggleModal} />}/>
+                <Route path="/ux-ui-design" exact render={props => <TitlePage titleId={selectedTitleId} popModal={this.popModal} toggleModal={this.toggleModal} />}/>
               </Switch>
           </Router>
         </Container>

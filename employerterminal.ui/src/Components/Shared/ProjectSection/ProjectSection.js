@@ -1,5 +1,6 @@
 import React from 'react';
-import Projects from '../Project/Project';
+import ProjectList from '../Project/ProjectList';
+import Project from '../Project/Project';
 import Skill from '../Skills/Skill';
 import { getProjectsBySectionId } from '../../../helpers/data/projects';
 import { getSkillsByProjectSection } from '../../../helpers/data/skills';
@@ -39,8 +40,12 @@ class ProjectSection extends React.Component {
 
   renderProjects = () => {
     const { projects } = this.state;
-    const { popModal, toggleModal } = this.props;
-      return (projects.map(project => <Projects key={project.project_id} project={project} popModal={popModal} toggleModal={toggleModal} />))
+    const { titleId, popModal, toggleModal } = this.props;
+    if (titleId === 2 || titleId === 4) {
+      return (projects.map(project => <ProjectList key={project.project_id} project={project} popModal={popModal} toggleModal={toggleModal} />))
+    } else if (titleId === 3 || titleId === 5)
+     return (projects.map(project => <Project key={project.project_id} project={project} />)
+     )
   }
 
   render () {

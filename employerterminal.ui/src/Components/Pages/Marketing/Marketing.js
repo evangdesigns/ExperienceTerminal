@@ -25,9 +25,10 @@ class Marketing extends React.Component {
   }
   renderProjectTable = () => {
     const { projectSections } = this.state;
+    const { titleId, popModal, toggleModal } = this.props;
     if (projectSections) {
       return (
-        projectSections.map(section => <ProjectSection key={section.project_section_id} section={section} sectionId={section.project_section_id}/>)
+        projectSections.map(section => <ProjectSection key={section.project_section_id} section={section} sectionId={section.project_section_id} popModal={popModal} toggleModal={toggleModal} titleId={titleId}/>)
       )
     } else {
       return(null);

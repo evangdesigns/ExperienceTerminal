@@ -25,10 +25,10 @@ class WebDesign extends React.Component {
   }
   renderProjectTable = () => {
     const { projectSections } = this.state;
-    const { popModal, toggleModal } = this.props;
+    const { popModal, toggleModal, titleId } = this.props;
     if (projectSections) {
       return (
-        projectSections.map(section => <ProjectSection key={section.project_section_id} section={section} sectionId={section.project_section_id} popModal={popModal} toggleModal={toggleModal} />)
+        projectSections.map(section => <ProjectSection key={section.project_section_id} section={section} sectionId={section.project_section_id} popModal={popModal} toggleModal={toggleModal} titleId={titleId}/>)
       )
     } else {
       return(null);

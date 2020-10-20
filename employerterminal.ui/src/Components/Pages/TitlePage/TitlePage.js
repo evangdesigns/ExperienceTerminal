@@ -1,15 +1,15 @@
 import React from 'react';
-import { Switch, Route } from "react-router-dom";
-import DirectiveSign from '../../Shared/DirectiveSign/DirectiveSign';
-import Bio from '../Bio/Bio';
-import GraphicDesign from '../GraphicDesign/GraphicDesign';
-
 import ProjectSection from '../../Shared/ProjectSection/ProjectSection';
 import { getProjectSectionsByTitleId } from '../../../helpers/data/projects';
 
 class TitlePage extends React.Component {
   state = {
     projectSections: [],
+  }
+
+  getProjectsSections = (titleId) => {
+    getProjectSectionsByTitleId(titleId)
+    .then(projectSections => this.setState({ projectSections : projectSections }))
   }
 
   componentDidMount() {
@@ -21,27 +21,14 @@ class TitlePage extends React.Component {
     const { titleId } = this.props;
     if (prevProps.titleId !== titleId ) {
       this.getProjectsSections(titleId);
-      }
-    }
-
-  getProjectsSections = (titleId) => {
-    getProjectSectionsByTitleId(titleId)
-    .then(projectSections => this.setState({ projectSections : projectSections }))
-  }
-//this will be refactored to determine, based on title, what is displayed.
-  routePicker() {
-    const { titleId } = this.props;
-    if (titleId === 1) {
-      return (<Route path="/" exact component={Bio}/>)
-    } else if (titleId === 3 || titleId === 5) {
-      return (<Route path="/graphic-design" exact component={ProjectSection}/>)
     }
   }
-  renderProjectSections = () => {
+  renderProjectTable = () => {
     const { projectSections } = this.state;
+    const { titleId, popModal, toggleModal } = this.props;
     if (projectSections) {
       return (
-        projectSections.map(section => <ProjectSection key={section.project_section_id} section={section} sectionId={section.project_section_id}/>)
+        projectSections.map(section => <ProjectSection key={section.project_section_id} section={section} sectionId={section.project_section_id} popModal={popModal} toggleModal={toggleModal} titleId={titleId}/>)
       )
     } else {
       return(null);
@@ -49,18 +36,9 @@ class TitlePage extends React.Component {
   }
 
   render () {
-    const { selectedTitle, titleId } = this.props;
-    const { projectSections } = this.state
     return (
-      <div className="TitlePage">
-        <DirectiveSign titleId={titleId} selectedTitle={selectedTitle}/>
-        <Switch>
-          <Route path="/" exact component={GraphicDesign}/>
-          <Route path="/graphic-design" exact component={GraphicDesign}/>
-          <Route path="/web-design" exact component={Bio}/>
-          <Route path="/marketing" exact component={GraphicDesign}/>
-          <Route path="/ui-ux-design" exact component={Bio}/>
-        </Switch>
+      <div>
+        {this.renderProjectTable()}
       </div>
     );
   }
