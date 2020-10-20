@@ -22,23 +22,23 @@ namespace EmployerTerminal.Controllers
         [HttpGet]
         public IActionResult GetAllProjects()
         {
-            var projects = _imageRepository.GetAllImages();
-            return Ok(projects);
+            var images = _imageRepository.GetAllImages();
+            return Ok(images);
         }
 
         // GET: api/imagess/project/{projectId}
         [HttpGet("project/{projectId}")]
         public IActionResult GetSkillsByTitle(int projectId)
         {
-            var projects = _imageRepository.GetImagesByProjectId(projectId);
+            var images = _imageRepository.GetImagesByProjectId(projectId);
 
-            if (projects == null)
+            if (images == null)
             {
                 return NotFound("No images by that Project Id.");
             }
             else
             {
-                return Ok(projects);
+                return Ok(images);
             }
         }
     }

@@ -8,7 +8,15 @@ import './Modal.scss';
 
 class Modal extends React.Component {
   state = {
-    project: {},
+    project: {
+      project_description: '',
+      project_git_url: '',
+      project_id: '',
+      project_image_url: '',
+      project_name: '',
+      project_section_id: '',
+      project_url: '',
+    },
     images: []
   };
 
@@ -22,7 +30,23 @@ class Modal extends React.Component {
 
   imageDisplay = () => {
     const { images, project } = this.state;
-    if (images.length > 1) {
+    let thumb = project.project_image_url.includes('tmb');
+    let video = project.project_image_url.includes('youtube');
+    if (thumb && images.length > 1) {
+      return (
+        <Carousel>
+          {images.map(image => (
+            <Carousel.Item key={image.image_id}>
+              <img
+              className="d-block w-100"
+              src={image.image_url}
+              alt={image.image_name}
+              />
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      )
+    } else if (!thumb && images.length > 1) {
       return (
         <Carousel>
           <Carousel.Item>
@@ -43,12 +67,16 @@ class Modal extends React.Component {
           ))}
         </Carousel>
       )
-    } else if (project.project_image_url && project.project_image_url.includes('tmb')){
+    } else if (thumb && images.length === 1){
       return (
         <div className="modalPdf">
-          <a href={project.project_url} rel="noopener noreferrer" target="_blank">
             {images.map(image => <img src={image.image_url} alt={images.image_name}/>)}
-          </a>
+        </div>
+      )
+    } else if (video){
+      return (
+        <div className="modalVideo">
+          <iframe title={project.project_name} src={project.project_image_url} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       )
     } else {
