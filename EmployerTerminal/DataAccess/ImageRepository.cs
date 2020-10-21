@@ -30,6 +30,7 @@ namespace EmployerTerminal.DataAccess
         }
 
         public List<Image> GetImagesByProjectId(int projectId)
+
         {
             var sql = "SELECT * FROM image_table WHERE project_id = @projectId";
 

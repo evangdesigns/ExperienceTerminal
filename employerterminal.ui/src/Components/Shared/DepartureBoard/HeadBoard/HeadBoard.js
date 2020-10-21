@@ -3,6 +3,7 @@ import DepartureBoard from '../DepartureBoard';
 import TitleSelector from './TitleSelector/TitleSelector';
 import { ReactComponent as Logo } from '../../../../images/logo.svg';
 import { Row, Col, Jumbotron } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 
@@ -15,7 +16,11 @@ class HeadBoard extends React.Component {
         <Row className="board-header d-flex flex-wrap justify-content-between">
           <Col>
             <Row>
-              <Col className="pr-0" lg={2}><Logo className="logo"/></Col>
+              <Col className="pr-0" lg={2}>
+                  <Link to="/project-form">
+                    <Logo className="logo"/>
+                  </Link>
+                </Col>
               <Col>
               <h1 className="align-middle">Arrivals</h1>
               </Col>

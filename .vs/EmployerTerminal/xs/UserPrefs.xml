@@ -1,22 +1,22 @@
 ﻿<Properties StartupConfiguration="{0BBEEDEA-2DC6-4AC2-A8FD-A27D8EB8DAEC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="EmployerTerminal/DataAccess/ImageRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="EmployerTerminal/Commands/AddNewProjectCommand.cs">
     <Files>
-      <File FileName="EmployerTerminal/Controllers/ImageController.cs" Line="30" Column="41" />
-      <File FileName="EmployerTerminal/DataAccess/ImageRepository.cs" Line="43" Column="1" />
-      <File FileName="EmployerTerminal/Controllers/ProjectController.cs" Line="58" Column="1" />
-      <File FileName="EmployerTerminal/DataAccess/ProjectRepository.cs" Line="56" Column="1" />
+      <File FileName="EmployerTerminal/Commands/AddNewProjectCommand.cs" Line="1" Column="1" />
+      <File FileName="EmployerTerminal/Controllers/ProjectController.cs" />
+      <File FileName="EmployerTerminal/DataAccess/ProjectRepository.cs" />
+      <File FileName="EmployerTerminal/appsettings.json" />
+      <File FileName="EmployerTerminal/Startup.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="EmployerTerminal" expanded="True">
             <Node name="EmployerTerminal" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Controllers" expanded="True" />
-              <Node name="DataAccess" expanded="True">
-                <Node name="ImageRepository.cs" selected="True" />
+              <Node name="Commands" expanded="True">
+                <Node name="AddNewProjectCommand.cs" selected="True" />
               </Node>
-              <Node name="Models" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="DataAccess" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -26,10 +26,15 @@
   <MonoDevelop.Ide.ItemProperties.EmployerTerminal PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Debugger.DebugSourceFolders />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/egrabenstein/Dropbox/Employment/jot/EmployerTerminal/EmployerTerminal/DataAccess/ImageRepository.cs" relfile="EmployerTerminal/DataAccess/ImageRepository.cs" line="33" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="default" Name="default">
+      <Items>
+        <StartupItem ItemId="{0BBEEDEA-2DC6-4AC2-A8FD-A27D8EB8DAEC}" ItemName="EmployerTerminal" ConfigurationId="Default" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
 </Properties>

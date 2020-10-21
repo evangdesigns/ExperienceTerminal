@@ -19,4 +19,10 @@ const getProjectById = (projectId) => new Promise((resolve, reject) => {
     .catch(error => reject(error))
 });
 
-export { getProjectSectionsByTitleId, getProjectsBySectionId, getProjectById };
+const addProject = (newProject) => axios.post(`${baseUrl}/projects/add`, newProject);
+
+const updateProject = (projectId, updatedProject) => axios.put(`${baseUrl}/projects/update/${projectId}`, updatedProject);
+
+const deleteProject = (projectId) => axios.delete(`${baseUrl}/projects/delete/${projectId}`);
+
+export { getProjectSectionsByTitleId, getProjectsBySectionId, getProjectById, addProject, updateProject, deleteProject };

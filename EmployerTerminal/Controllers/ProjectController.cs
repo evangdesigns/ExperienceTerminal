@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using EmployerTerminal.DataAccess;
+using EmployerTerminal.Commands;
 
 namespace EmployerTerminal.Controllers
 {
@@ -16,6 +17,24 @@ namespace EmployerTerminal.Controllers
         public ProjectController(ProjectRepository repository)
         {
             _projectRepository = repository;
+        }
+
+        // POST: api/projects/add
+        [HttpPost("add")]
+        public IActionResult AddProject(AddNewProjectCommand newProject)
+        {
+            var existingProject = _projectRepository.GetProjectIdByProjectName(newProject.Project_name);
+
+            if (existingProject == null)
+            {
+                var createdProject = _projectRepository.AddNewProject(newProject);
+
+                return Created("", createdProject);
+            }
+            else
+            {
+                return BadRequest("Project already exists.");
+            }
         }
 
         // GET: api/projects
