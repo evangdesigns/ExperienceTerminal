@@ -5,7 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
-import HeadBoard from '../Components/Shared/DepartureBoard/HeadBoard/HeadBoard';
+import HeadBoard from '../Components/Shared/HeadBoard/HeadBoard';
 import DirectiveSign from '../Components/Shared/DirectiveSign/DirectiveSign';
 import Bio from'../Components/Pages/Bio/Bio';
 import TitlePage from '../Components/Pages/TitlePage/TitlePage';
@@ -15,6 +15,7 @@ import ProjectForm from '../Components/Form/ProjectForm';
 import { getAllTitles, getTitleId } from '../helpers/data/titles';
 
 import './App.scss';
+import Footer from '../Components/Shared/Footer/Footer';
 
 class App extends React.PureComponent {
 
@@ -23,7 +24,7 @@ class App extends React.PureComponent {
     selectedTitleId: 1,
     titles: [],
     modalShow: false,
-    modalData: null
+    modalData: null,
   }
 
   toggleModal = () => {
@@ -85,12 +86,14 @@ class App extends React.PureComponent {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     getAllTitles()
       .then(titles => this.setState({ titles : titles }));
     this.routeChecker()
   }
 
   componentDidUpdate() {
+    window.scrollTo(0, 0);
     this.routeChecker()
   }
 
@@ -102,7 +105,7 @@ class App extends React.PureComponent {
     const { titles, selectedTitle, selectedTitleId, modalShow, modalData } = this.state;
     const buildModal = () => {
       if (modalData && modalShow) {
-        return ( <Modal projectId={modalData} toggleModal={this.toggleModal} />)
+        return ( <Modal title={selectedTitle} data={modalData} toggleModal={this.toggleModal} />)
       }
     }
     return (
@@ -120,6 +123,7 @@ class App extends React.PureComponent {
                 <Route path="/marketing" exact render={props => <TitlePage titleId={selectedTitleId} popModal={this.popModal} toggleModal={this.toggleModal} />}/>
                 <Route path="/ux-ui-design" exact render={props => <TitlePage titleId={selectedTitleId} popModal={this.popModal} toggleModal={this.toggleModal} />}/>
               </Switch>
+              <Footer titleId={selectedTitleId} selectedTitle={selectedTitle} titleChange={this.titleChange} routeWriter={this.routeWriter} popModal={this.popModal} toggleModal={this.toggleModal}/>
           </Router>
         </Container>
     </div>

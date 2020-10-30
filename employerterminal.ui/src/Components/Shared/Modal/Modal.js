@@ -17,16 +17,8 @@ class Modal extends React.Component {
       project_section_id: '',
       project_url: '',
     },
-    images: []
+    images: [],
   };
-
-  componentDidMount() {
-    const { projectId } = this.props;
-    getProjectById(projectId)
-      .then(project => this.setState({ project : project }));
-    getImagesByProjectId(projectId)
-      .then(images => this.setState({ images : images }));
-  }
 
   imageDisplay = () => {
     const { images, project } = this.state;
@@ -86,6 +78,14 @@ class Modal extends React.Component {
         </div>
       )
     }
+  }
+
+  componentDidMount() {
+    const { data } = this.props;
+    getProjectById(data)
+      .then(project => this.setState({ project : project }));
+      getImagesByProjectId(data)
+      .then(images => this.setState({ images : images }));
   }
 
   render () {

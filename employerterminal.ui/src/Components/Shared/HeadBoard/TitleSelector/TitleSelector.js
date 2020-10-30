@@ -1,5 +1,5 @@
 import React from 'react';
-import RadioSelector from '../../../RadioSelector/RadioSelector';
+import RadioSelector from '../../RadioSelector/RadioSelector';
 import './TitleSelector.scss';
 
 class TitleSelector extends React.Component {

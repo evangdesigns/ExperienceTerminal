@@ -6,7 +6,7 @@
     width: 100%;
     text-align: center;
     position: relative;
-    font-size: 28pt;
+    font-size: 30pt;
     text-transform:uppercase;
   }
 
@@ -119,12 +119,19 @@
 }
 //Small screens, laptops
 @media screen and (max-width: 1024px) {
-
+  .DepartureLetter {
+    span.letter {
+      font-size: 18pt;
+    }
+  }
 }
-
 //iPads, Tablets
 @media screen and (max-width: 768px) {
-
+  .DepartureLetter {
+    span.letter {
+      font-size: 12pt;
+    }
+  }
 }
 
 //Mobile devices

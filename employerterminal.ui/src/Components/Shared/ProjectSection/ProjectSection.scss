@@ -2,11 +2,13 @@
 @import '../../../styles/variables.scss';
 
 .ProjectSection {
+
   table {
     width: 100%;
     background-color: $black;
     border-radius: 10px;
     border-top: none !important;
+    box-shadow: $black 2px 2px 10px;
   }
   thead,tr,th,td {
     border: none !important;

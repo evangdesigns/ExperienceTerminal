@@ -5,8 +5,13 @@
   background-color: $yellow;
   color: $black;
   border: 5px solid $black;
+  border-radius: 3px;
   padding: 0 20px 20px;
   margin: 20px 70px;
+  box-shadow: $black 2px 2px 10px;
+  svg {
+    fill: $black;
+  }
   .upperDeck {
     border-bottom: 3px solid $black;
     margin: 0 -20px;
@@ -21,6 +26,7 @@
   }
   .vrtArrow {
     width:90%;
+    pointer-events:none;
   }
   h1, h3 {
     font-weight: bolder;

@@ -56,8 +56,8 @@ class ProjectSection extends React.Component {
         <Table striped size="sm" className="ProjectSection" variant="dark">
           <thead>
             <tr>
-              <th colSpan={2} className="align-middle p-3"><h2>{section.project_section_name}</h2></th>
-              <th className="align-middle text-right p-3 float-right">
+              <th colSpan={2} className="align-middle py-1 px-3"><h2>{section.project_section_name}</h2></th>
+              <th className="align-middle text-right py-1 px-3 float-right">
                 <div className="d-flex align-content-end">
                   {projectSkills.map(skill => <Skill key={skill.skill_id} skill={skill}/>)}
                 </div>

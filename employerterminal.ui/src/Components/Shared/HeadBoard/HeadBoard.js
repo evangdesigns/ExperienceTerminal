@@ -1,7 +1,7 @@
 import React from 'react';
-import DepartureBoard from '../DepartureBoard';
+import DepartureBoard from '../DepartureBoard/DepartureBoard';
 import TitleSelector from './TitleSelector/TitleSelector';
-import { ReactComponent as Logo } from '../../../../images/logo.svg';
+import { ReactComponent as Logo } from '../../../images/logo.svg';
 import { Row, Col, Jumbotron } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -13,21 +13,18 @@ class HeadBoard extends React.Component {
     const { selectedTitle, titles, titleChange } = this.props;
     return (
       <Jumbotron bsPrefix="head-board">
-        <Row className="board-header d-flex flex-wrap justify-content-between">
+        <Row className="board-header mx-2">
           <Col>
             <Row>
-              <Col className="pr-0" lg={2}>
-                  <Link to="/project-form">
-                    <Logo className="logo"/>
-                  </Link>
-                </Col>
               <Col>
-              <h1 className="align-middle">Arrivals</h1>
+              <h1 className="welcome"><Link to="/">
+                    <Logo className="logo"/>
+                  </Link> Welcome</h1>
               </Col>
             </Row>
           </Col>
           <Col>
-            <h1 className="text-right">Employer Terminal</h1>
+            <h1 className="text-right">Experience Terminal</h1>
           </Col>
         </Row>
         <Row>
