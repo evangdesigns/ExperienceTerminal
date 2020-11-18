@@ -25,7 +25,7 @@ class Project extends React.Component {
           <Carousel.Item>
             <img
             className="carouselImage"
-            src={project.project_image_url}
+            src={`images/projectImages/${project.project_image_url}`}
             alt={project.project_name}
             />
           </Carousel.Item>
@@ -44,7 +44,7 @@ class Project extends React.Component {
       return (
         <img
           className="projectImage"
-          src={project.project_image_url}
+          src={`images/projectImages/${project.project_image_url}`}
           alt={project.project_name}
           />
       );

@@ -31,7 +31,7 @@ class Modal extends React.Component {
             <Carousel.Item key={image.image_id}>
               <img
               className="d-block w-100"
-              src={image.image_url}
+              src={`images/projectImages/${image.image_url}`}
               alt={image.image_name}
               />
             </Carousel.Item>
@@ -44,7 +44,7 @@ class Modal extends React.Component {
           <Carousel.Item>
             <img
             className="d-block w-100"
-            src={project.project_image_url}
+            src={`images/projectImages/${project.project_image_url}`}
             alt={project.project_name}
             />
           </Carousel.Item>
@@ -52,7 +52,7 @@ class Modal extends React.Component {
             <Carousel.Item key={image.image_id}>
               <img
               className="d-block w-100"
-              src={image.image_url}
+              src={`images/projectImages/${image.image_url}`}
               alt={image.image_name}
               />
             </Carousel.Item>
@@ -62,7 +62,7 @@ class Modal extends React.Component {
     } else if (thumb && images.length === 1){
       return (
         <div className="modalPdf">
-            {images.map(image => <img src={image.image_url} alt={images.image_name}/>)}
+            {images.map(image => <img src={`images/projectImages/${image.image_url}`} alt={images.image_name}/>)}
         </div>
       )
     } else if (video){
@@ -74,7 +74,7 @@ class Modal extends React.Component {
     } else {
       return (
         <div className="modalImage">
-          <img src={project.project_image_url} alt={project.project_name}/>
+          <img src={`images/projectImages/${project.project_image_url}`} alt={project.project_name}/>
         </div>
       )
     }
