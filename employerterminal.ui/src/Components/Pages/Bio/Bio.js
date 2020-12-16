@@ -11,7 +11,8 @@ class Bio extends React.Component {
         <Row>
           <Col>
             <div>
-              <p><img src="" alt="" />It was a cool, but sunny day in June. All the weather reports called for clear skies and contrary to popular belief, I'm not one to waste gorgeous weather inside binge watching Glee. So I strapped on my boots and helmet, hopped on my motorcycle, and went to find the elusive third Dragon Ball the state of Tennessee so openly boasts on it's flag.</p>
+            <img className="curve" src="images/headShot.jpg" alt="Evan G headshot" />
+              <p>It was a cool, but sunny day in June. All the weather reports called for clear skies and contrary to popular belief, I'm not one to waste gorgeous weather inside binge watching Glee. So I strapped on my boots and helmet, hopped on my motorcycle, and went to find the elusive third Dragon Ball the state of Tennessee so openly boasts on it's flag.</p>
 
               <p>About an hour into my euphoria, I noticed dark clouds gathering in the distance. I thought, "Wow?! I've been riding this whole time in 4th gear?! I should change up." Then I thought, "This can't be?! The meteorologist said we would have perfect weather today. And they are NEVER wrong." I continued on my current heading—more in hope than expectation—that I would come out of this dry and unscathed. Within a matter of minutes however, I found myself in a torrential rain rivaled only to the monsoon season of the South Pacific.</p>
 

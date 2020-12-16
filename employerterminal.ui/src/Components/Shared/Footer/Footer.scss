@@ -48,6 +48,18 @@
       text-decoration: none;
       color: $grey
     }
+    img {
+      svg.title {
+        width:50px;
+        margin: 0 5px;
+        .a {fill:$white}
+        .b {fill:$green}
+        &:hover {
+          .a {fill-opacity: .5;}
+          .b {fill:$green}
+        }
+      }
+    }
     svg.icon {
       width:50px;
       margin: 0 5px;

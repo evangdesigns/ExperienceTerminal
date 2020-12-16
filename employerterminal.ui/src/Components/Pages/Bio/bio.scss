@@ -4,11 +4,14 @@
   color: $black;
   text-align: justify;
   font-size: 18px;
-  margin: 0 20px;
-  img {
+  margin: 50px 20px 0;
+  .curve {
     width: 200px;
-    border-radius: 100px;
+    height: auto;
     float: left;
-    margin: 0 10px 2px;
+    border: $black 5px solid;
+    margin-right:2rem;
+    border-radius: 50%;
+    shape-outside:circle();
   }
 }

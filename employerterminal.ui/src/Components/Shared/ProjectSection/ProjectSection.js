@@ -2,6 +2,7 @@ import React from 'react';
 import ProjectList from '../Project/ProjectList';
 import Project from '../Project/Project';
 import Skill from '../Skills/Skill';
+import { CSSTransitionGroup } from 'react-transition-group'
 import { getProjectsBySectionId } from '../../../helpers/data/projects';
 import { getSkillsByProjectSection } from '../../../helpers/data/skills';
 import { Table } from 'react-bootstrap';
@@ -12,6 +13,11 @@ class ProjectSection extends React.Component {
   state = {
     projects: [],
     projectSkills: []
+  }
+
+  resetState = () => {
+    this.setState({ projects : []})
+    this.setState({ projectSkills : [] })
   }
 
   componentDidMount() {
@@ -52,6 +58,12 @@ class ProjectSection extends React.Component {
     const { section } = this.props;
     const { projectSkills } = this.state;
     return (
+      <CSSTransitionGroup
+          transitionName="example"
+          transitionAppear={true}
+          transitionAppearTimeout={500}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={100}>
       <div className="ProjectSection">
         <Table striped size="sm" className="ProjectSection" variant="dark">
           <thead>
@@ -69,6 +81,7 @@ class ProjectSection extends React.Component {
           </tbody>
         </Table>
       </div>
+      </CSSTransitionGroup>
     );
   }
 }

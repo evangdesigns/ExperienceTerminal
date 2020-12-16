@@ -58,13 +58,13 @@ class Footer extends React.Component {
     this.getPreviousTitle(titleId)
   }
 
-  componentDidUpdate(prevProps) {
-    const { titleId } = this.props;
-    if (prevProps.titleId !== titleId ) {
-      this.getNextTitle(titleId);
-      this.getPreviousTitle(titleId)
-      }
-    }
+  // componentDidUpdate(prevProps) {
+  //   const { titleId } = this.props;
+  //   if (prevProps.titleId !== titleId ) {
+  //     this.getNextTitle(titleId);
+  //     this.getPreviousTitle(titleId)
+  //     }
+  //   }
 
   render () {
     const { routeWriter } = this.props;
@@ -81,7 +81,7 @@ class Footer extends React.Component {
               <Media className="underlay">
                 <Arrow className="align-self-start mr-3 hrzArrow" transform="rotate(180)" fill="#fff"/>
                 <Media.Body>
-                <h3><img src={`https://github.com/evangdesigns/EmployerTerminal/blob/master/employerterminal.ui/src/images/icons/title/${prev.title_Icon}.png?raw=true`} alt=" " width={50} /> {prev.title_Name}</h3>
+                <h3><img className="title" src={`images/icons/title/${prev.title_Icon}.svg`} alt=" " width={50} /> {prev.title_Name}</h3>
                 </Media.Body>
               </Media>
             </Col>
@@ -91,7 +91,7 @@ class Footer extends React.Component {
             </Link>
             <Media className="underlay">
               <Media.Body>
-              <h3 className="text-right"><img src={`https://github.com/evangdesigns/EmployerTerminal/blob/master/employerterminal.ui/src/images/icons/title/${next.title_Icon}.png?raw=true`}  alt=" " width={50} /> {next.title_Name}</h3>
+              <h3 className="text-right"><img src={`images/icons/title/${next.title_Icon}.svg`}  alt=" " width={50} /> {next.title_Name}</h3>
               </Media.Body>
                 <Arrow className="align-self-start ml-3 hrzArrow"/>
             </Media>

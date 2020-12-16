@@ -23,6 +23,7 @@ class TitlePage extends React.Component {
       this.getProjectsSections(titleId);
     }
   }
+
   renderProjectTable = () => {
     const { projectSections } = this.state;
     const { titleId, popModal, toggleModal } = this.props;

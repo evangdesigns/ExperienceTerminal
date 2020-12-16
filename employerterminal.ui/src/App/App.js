@@ -10,12 +10,13 @@ import DirectiveSign from '../Components/Shared/DirectiveSign/DirectiveSign';
 import Bio from'../Components/Pages/Bio/Bio';
 import TitlePage from '../Components/Pages/TitlePage/TitlePage';
 import Modal from '../Components/Shared/Modal/Modal';
-import ProjectForm from '../Components/Form/ProjectForm';
+import Footer from '../Components/Shared/Footer/Footer';
+// import ProjectForm from '../Components/Form/ProjectForm';
 
 import { getAllTitles, getTitleId } from '../helpers/data/titles';
 
 import './App.scss';
-import Footer from '../Components/Shared/Footer/Footer';
+
 
 class App extends React.PureComponent {
 
@@ -89,11 +90,6 @@ class App extends React.PureComponent {
     window.scrollTo(0, 0);
     getAllTitles()
       .then(titles => this.setState({ titles : titles }));
-    this.routeChecker()
-  }
-
-  componentDidUpdate() {
-    window.scrollTo(0, 0);
     this.routeChecker()
   }
 

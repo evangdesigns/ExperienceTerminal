@@ -10,35 +10,36 @@ class DepartureLetter extends React.Component {
   }
 
   alphabetSoup = (ltr) => {
-    let result = alphaArray.indexOf(ltr.toUpperCase())
+    let result = alphaArray.indexOf(ltr)
     return result;
   }
 
   flipRecurser = () => {
-    const outgoing = this.alphabetSoup(this.state.letter);
-    const incoming = this.alphabetSoup(this.props.inLetter);
-    //if the index of the current state is less than the incoming letter
-    if ( incoming < outgoing && outgoing !== 0 ) {
-      this.setState({ letter: alphaArray[outgoing - 1] })
-    } else if (incoming > outgoing) {
-      this.setState({ letter: alphaArray[outgoing + 1] })
-      //continually running over and over and over. Which means, this happens on the componentDidMount, so look at the row
-      //state never actully changes? or just resets everytime there's a new title implimented?
-    } else if (incoming === outgoing) {
-      return null
+    const { letter } = this.state;
+    let oldLI = this.alphabetSoup(letter);
+    let newLI = this.alphabetSoup(this.props.inLetter);
+    // console.log(oldLI, newLI)
+    if (newLI > oldLI ) {
+        this.setState({ letter: alphaArray[oldLI + 1]})
+    } else if ( newLI < oldLI ) {
+      this.setState({ letter: alphaArray[newLI + 1]})
     }
   }
 
   componentDidMount() {
-    setInterval(this.flipRecurser, 50)
-  }
-
-  componentDidUpdate() {
-    setInterval(this.flipRecurser, 50)
+    const { letter } = this.state;
+    let oldLI = this.alphabetSoup(letter);
+    let newLI = this.alphabetSoup(this.props.inLetter);
+    if (newLI === oldLI) {
+      return null;
+    } else if (newLI !== oldLI) {
+    setInterval(this.flipRecurser, 100)
+    }
   }
 
   componentWillUnmount() {
     clearInterval();
+    window.sessionStorage.clear();
   }
 
   render () {
@@ -52,7 +53,7 @@ class DepartureLetter extends React.Component {
         <span className="flap bottom">
           <span className="text">{letter}</span>
         </span>
-        <span className="fold">
+        <span className="foldLetter">
           <span className="flap falling" style={{ top:'auto', bottom:0,}}>
             <span className="text" style={{transitionDuration:'50ms', transitionTimingFunction: 'ease-out', transform:'scaleY(1)', top:0}}>{letter}</span>
           </span>

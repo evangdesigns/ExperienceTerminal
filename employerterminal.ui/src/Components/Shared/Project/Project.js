@@ -33,7 +33,7 @@ class Project extends React.Component {
             <Carousel.Item key={image.image_id}>
               <img
               className="carouselImage"
-              src={image.image_url}
+              src={`images/projectImages/${image.image_url}`}
               alt={image.image_name}
               />
             </Carousel.Item>

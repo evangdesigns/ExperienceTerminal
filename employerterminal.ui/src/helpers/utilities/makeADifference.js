@@ -1,3 +1,5 @@
+//Ensures that the message, however long or short, is always centered with the number of letters available.
+
 const splitTheDifference = (message, letterCount) => {
   const msgLength = message.length;
   if  (letterCount === msgLength) {
@@ -31,7 +33,7 @@ const splitTheDifference = (message, letterCount) => {
     for (i = 0; i < diff; i++) {
       message.pop();
     }
-    return message;
+    return message
   }
 }
 

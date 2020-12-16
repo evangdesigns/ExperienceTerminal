@@ -3,7 +3,6 @@ import DepartureBoard from '../DepartureBoard/DepartureBoard';
 import TitleSelector from './TitleSelector/TitleSelector';
 import { ReactComponent as Logo } from '../../../images/logo.svg';
 import { Row, Col, Jumbotron } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 
 
 
@@ -17,9 +16,10 @@ class HeadBoard extends React.Component {
           <Col>
             <Row>
               <Col>
-              <h1 className="welcome"><Link to="/">
-                    <Logo className="logo"/>
-                  </Link> Welcome</h1>
+              <h1 className="welcome">
+                  <Logo className="logo"/>
+                  &nbsp;Welcome
+                </h1>
               </Col>
             </Row>
           </Col>

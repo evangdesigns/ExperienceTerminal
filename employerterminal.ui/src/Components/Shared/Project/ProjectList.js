@@ -15,7 +15,7 @@ class ProjectList extends React.Component {
     return (
       <tr className="Project">
         <td className="px-4 img-thumbnail" width="100"><img src={`/images/projectImages/${project.project_image_url}`} alt=""/></td>
-        <td className="px-4">{project.project_name}</td>
+        <td className="px-4 col-10">{project.project_name}</td>
         <td className="text-right px-4"><div className="clickOverlay" id={project.project_id} onClick={this.modalEvent}><View className="white underlay" id={project.project_id}/></div></td>
       </tr>
     );
