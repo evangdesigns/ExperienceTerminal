@@ -2,7 +2,7 @@ import axios from 'axios';
 import { baseUrl }from '../keys.json';
 
 const getProjectSectionsByTitleId = (titleId) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/project-section/title/${titleId}`)
+  axios.get(`${baseUrl}/project-sections/title/${titleId}`)
     .then((result) => resolve(result.data))
     .catch(error => reject(error))
 });

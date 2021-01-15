@@ -40,9 +40,9 @@ class TitleSelector extends React.Component {
           <div className="flow-line" style={{width: flowPercent()}}></div>
           <div className="radio-container d-flex justify-content-around">
           {titles.map(title => {
-          if (selectedTitle !== title.title_Name)
-            return <RadioSelector key={title.title_Id} id={title.title_Name} title={title} titleChange={titleChange} routeWriter={this.routeWriter} status='unselected' />
-            return <RadioSelector key={title.title_Id} id={title.title_Name} title={title} titleChange={titleChange} routeWriter={this.routeWriter} status='selected' />
+          if (selectedTitle !== title.title_name)
+            return <RadioSelector key={title.title_Id} id={title.title_name} title={title} titleChange={titleChange} routeWriter={this.routeWriter} status='unselected' />
+            return <RadioSelector key={title.title_Id} id={title.title_name} title={title} titleChange={titleChange} routeWriter={this.routeWriter} status='selected' />
             }
           )}
           </div>

@@ -36,10 +36,10 @@ class DirectiveSign extends React.Component {
     .then(title => this.setState({ prev : title }))
   }
 
-  routeEvent = (title) => {
-    const { routeWriter } = this.props;
-    routeWriter(title);
-  }
+  // routeEvent = (title) => {
+  //   const { routeWriter } = this.props;
+  //   routeWriter(title);
+  // }
 
   eventHandler = (e) => {
     e.preventDefault();
@@ -78,23 +78,23 @@ class DirectiveSign extends React.Component {
         <Container bsPrefix="DirectiveSign">
         <Row className="upperDeck py-3">
           <Col onClick={this.eventHandler}>
-          <Link to={routeWriter(prev.title_Name)}>
-            <div className="clickOverlay" id={prev.title_Name}></div>
+          <Link to={routeWriter(prev.title_name)}>
+            <div className="clickOverlay" id={prev.title_name}></div>
           </Link>
             <Media className="underlay">
               <Arrow className="align-self-start mr-3 hrzArrow" transform="rotate(180)"/>
               <Media.Body>
-              <h3><img src={`https://github.com/evangdesigns/EmployerTerminal/blob/master/employerterminal.ui/src/images/icons/title/${prev.title_Icon}.png?raw=true`} alt=" " width={50} /> {prev.title_Name}</h3>
+              <h3><img src={`images/icons/title/${prev.title_icon}.png`} alt=" " width={50} /> {prev.title_name}</h3>
               </Media.Body>
             </Media>
           </Col>
           <Col onClick={this.eventHandler}>
-          <Link to={routeWriter(next.title_Name)}>
-            <div className="clickOverlay" id={next.title_Name}></div>
+          <Link to={routeWriter(next.title_name)}>
+            <div className="clickOverlay" id={next.title_name}></div>
           </Link>
           <Media className="underlay">
             <Media.Body>
-            <h3 className="text-right"><img src={`https://github.com/evangdesigns/EmployerTerminal/blob/master/employerterminal.ui/src/images/icons/title/${next.title_Icon}.png?raw=true`}  alt=" " width={50} /> {next.title_Name}</h3>
+            <h3 className="text-right"><img src={`images/icons/title/${next.title_icon}.png`}  alt=" " width={50} /> {next.title_name}</h3>
             </Media.Body>
               <Arrow className="align-self-start ml-3 hrzArrow"/>
           </Media>

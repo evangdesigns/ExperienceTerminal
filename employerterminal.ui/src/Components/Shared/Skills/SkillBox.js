@@ -31,15 +31,22 @@ class SkillBox extends React.Component {
     }
   }
 
-  render () {
+  renderSkills = () => {
     const { skills } = this.state;
-    const titleSkills = skills.map(skill => <Skill key={skill.skill_id} skill={skill}/>)
+    if (skills) {
+      return(skills.map(skill => <Skill key={skill.skill_id} skill={skill}/>))
+    } else {
+      return (<h2>Jack of All Trades Master of None</h2>)
+    }
+  }
+
+  render () {
     return (
       <Container>
         <Row className="justify-content-center">
           <Col sm={12} className="px-0">
             <div className="skill-box d-flex flex-wrap justify-content-center">
-              {titleSkills}
+              {this.renderSkills()}
             </div>
           </Col>
         </Row>

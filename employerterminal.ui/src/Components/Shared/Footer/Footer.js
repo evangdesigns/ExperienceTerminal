@@ -58,13 +58,13 @@ class Footer extends React.Component {
     this.getPreviousTitle(titleId)
   }
 
-  // componentDidUpdate(prevProps) {
-  //   const { titleId } = this.props;
-  //   if (prevProps.titleId !== titleId ) {
-  //     this.getNextTitle(titleId);
-  //     this.getPreviousTitle(titleId)
-  //     }
-  //   }
+  componentDidUpdate(prevProps) {
+    const { titleId } = this.props;
+    if (prevProps.titleId !== titleId ) {
+      this.getNextTitle(titleId);
+      this.getPreviousTitle(titleId)
+      }
+    }
 
   render () {
     const { routeWriter } = this.props;
@@ -75,23 +75,23 @@ class Footer extends React.Component {
           <div className="inner-footer">
             <Row className="upperDeck py-3">
             <Col onClick={this.eventHandler}>
-            <Link to={routeWriter(prev.title_Name)}>
-              <div className="clickOverlay" id={prev.title_Name}></div>
+            <Link to={routeWriter(prev.title_name)}>
+              <div className="clickOverlay" id={prev.title_name}></div>
             </Link>
               <Media className="underlay">
                 <Arrow className="align-self-start mr-3 hrzArrow" transform="rotate(180)" fill="#fff"/>
                 <Media.Body>
-                <h3><img className="title" src={`images/icons/title/${prev.title_Icon}.svg`} alt=" " width={50} /> {prev.title_Name}</h3>
+                <h3><img className="title" src={`images/icons/title/${prev.title_icon}.svg`} alt=" " width={50} /> {prev.title_name}</h3>
                 </Media.Body>
               </Media>
             </Col>
             <Col onClick={this.eventHandler}>
-            <Link to={routeWriter(next.title_Name)}>
-              <div className="clickOverlay" id={next.title_Name}></div>
+            <Link to={routeWriter(next.title_name)}>
+              <div className="clickOverlay" id={next.title_name}></div>
             </Link>
             <Media className="underlay">
               <Media.Body>
-              <h3 className="text-right"><img src={`images/icons/title/${next.title_Icon}.svg`}  alt=" " width={50} /> {next.title_Name}</h3>
+              <h3 className="text-right"><img src={`images/icons/title/${next.title_icon}.svg`}  alt=" " width={50} /> {next.title_name}</h3>
               </Media.Body>
                 <Arrow className="align-self-start ml-3 hrzArrow"/>
             </Media>
@@ -119,7 +119,7 @@ class Footer extends React.Component {
         </svg>
         <div>
           <Logo className="logo"/>
-          <p>©2020 Evan Grabenstein. All rights reserved.</p>
+          <p>©2021 Evan Grabenstein. All rights reserved.</p>
         </div>
         <svg width="25" height="150" style={{marginTop:-20, marginBottom:-20}}>
           <rect width="25" height="150" />
