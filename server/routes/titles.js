@@ -1,17 +1,33 @@
 const router = require('express').Router();
-let Title = require('../models/title.model');
+const Title = require('../models/Title');
 
-router.route('/').get((req, res) => {
-  Title.find()
-    .then(titles => res.json(titles))
-    .catch(err => res.status(400).json('Error: ' + err));
+router.get("/", async (req, res) => {
+  try {
+    const titles = await Title.find();
+    res.json(titles);
+  } catch (err) {
+    res.json({ message: err });
+  }
 });
 
-router.route('/:id').get(function(req, res) {
-  let id = req.params.id;
-  Title.findById(id, function(err, title) {
-      res.json(title);
-  });
+router.get("/:id", async (req, res ) => {
+  try {
+    const title = await Title.findOne({title_id: req.params.id})
+    res.json(title);
+  } catch (err) {
+    res.json({ message: err });
+  }
 });
+
+//Query by Title for title_id DOESNT WORK
+router.get("/title/:title", async (req, res) => {
+  try {
+    const title = await Title.findOne({ title_name: req.params.title });
+    res.json(title.title_id);
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
+
 
 module.exports = router;

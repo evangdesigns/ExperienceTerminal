@@ -1,3 +1,4 @@
+require('dotenv/config');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -8,19 +9,21 @@ const PORT = 4000;
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://employerAdmin:S7687SoXzr5i1FkJ@cluster0.a20hh.mongodb.net/EmployerTerminalDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
-const connection = mongoose.connection;
-
-connection.once('open', function() {
-    console.log("MongoDB database connection established successfully");
-})
-
+mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+  console.log("MongoDB database connection established successfully")
+});
 
 const titleRouter = require('./routes/titles');
 const skillRouter = require('./routes/skills');
+const projectRouter = require('./routes/projects');
+const projectSectionRouter = require('./routes/projectSections');
+const imageRouter = require('./routes/images');
 
 app.use('/titles', titleRouter);
 app.use('/skills', skillRouter);
+app.use('/projects', projectRouter);
+app.use('/project-sections', projectSectionRouter);
+app.use('/images', imageRouter);
 
 
 app.listen(PORT, function() {
