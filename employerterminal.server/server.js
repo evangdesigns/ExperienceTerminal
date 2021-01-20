@@ -8,16 +8,10 @@ let port = process.env.PORT;
 if (port == null || port == "") {
   port = 8000;
 }
-app.listen(port);
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
-
-app.use(express.static(path.join(__dirname, 'build')));
-
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
 mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
   console.log("MongoDB database connection established successfully")
@@ -38,6 +32,6 @@ app.use('/images', imageRouter);
 app.use('/contact', mailRouter);
 
 
-app.listen(PORT, function() {
-    console.log("Server is running on Port: " + PORT);
+app.listen(port, function() {
+    console.log("Server is running on Port: " + port);
 });

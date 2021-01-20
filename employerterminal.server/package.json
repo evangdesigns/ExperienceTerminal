@@ -1,5 +1,5 @@
 {
-  "name": "employer_terminal_server",
+  "name": "experienceterminal",
   "version": "1.0.0",
   "description": "Server for MERN Stack Application",
   "main": "server.js",
@@ -10,6 +10,10 @@
     "node": "12.18.0",
     "npm": "6.14.8"
   },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
   "author": "Evan G",
   "license": "MIT",
   "dependencies": {
