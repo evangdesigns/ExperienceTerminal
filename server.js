@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const port = process.env.PORT || 5000;
-const publicPath = path.join(__dirname, 'build');
+const publicPath = path.join(__dirname, '/client/build');
 
 app.use(express.static(publicPath));
 app.use(cors());
@@ -24,12 +24,12 @@ const projectSectionRouter = require('./routes/projectSections');
 const imageRouter = require('./routes/images');
 const mailRouter = require('./routes/mailer');
 
-app.use('/titles', titleRouter);
-app.use('/skills', skillRouter);
-app.use('/projects', projectRouter);
-app.use('/project-sections', projectSectionRouter);
-app.use('/images', imageRouter);
-app.use('/contact', mailRouter);
+app.use('/api/titles', titleRouter);
+app.use('/api/skills', skillRouter);
+app.use('/api/projects', projectRouter);
+app.use('/api/project-sections', projectSectionRouter);
+app.use('/api/images', imageRouter);
+app.use('/api/contact', mailRouter);
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
