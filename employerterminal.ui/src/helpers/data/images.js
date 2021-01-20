@@ -1,14 +1,14 @@
 import axios from 'axios';
-import { baseUrl }from '../keys.json';
+import { path }from "../../../../server.js";
 
 const getAllImages = () => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/images`)
+  axios.get(`${path}/images`)
     .then((result) => resolve(result.data))
     .catch(error => reject(error))
 });
 
 const getImagesByProjectId = (projectId) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/images/project/${projectId}`)
+  axios.get(`${path}/images/project/${projectId}`)
     .then((result) => resolve(result.data))
     .catch(error => reject(error))
 });

@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { baseUrl }from '../keys.json';
+import { path }from "../../../../server.js";
 
 const submitContactForm = (formData) => new Promise((resolve, reject) => {
-  axios.post(`${baseUrl}/contact`, formData)
+  axios.post(`${path}/contact`, formData)
     .then((result) => resolve(result.data))
     .catch(error => reject(error))
 });

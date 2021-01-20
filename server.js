@@ -5,7 +5,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000;
 const publicPath = path.join(__dirname, 'build');
 
 app.use(express.static(publicPath));
