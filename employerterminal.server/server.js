@@ -1,14 +1,14 @@
 require('dotenv').config();
+const path = require('path');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 8000;
-}
+const port = process.env.PORT || 4000;
+const publicPath = path.join(__dirname, '..', './build');
 
+app.use(express.static(publicPath));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
@@ -31,6 +31,9 @@ app.use('/project-sections', projectSectionRouter);
 app.use('/images', imageRouter);
 app.use('/contact', mailRouter);
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(publicPath, 'index.html'));
+});
 
 app.listen(port, function() {
     console.log("Server is running on Port: " + port);

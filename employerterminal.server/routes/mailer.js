@@ -11,7 +11,7 @@ router.post('/', async(req, res) => {
     port: 465,
     secure: true,
     socketTimeout: 5000,
-    logger: true,
+    logger: false,
     auth: {
       user: GMAIL_USER,
       pass: GMAIL_PASS
