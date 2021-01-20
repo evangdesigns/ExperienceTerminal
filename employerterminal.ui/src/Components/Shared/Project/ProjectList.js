@@ -13,12 +13,18 @@ class ProjectList extends React.Component {
   componentDidMount() {
     const { project } = this.props;
     getImagesByProjectId(project.project_id)
-    .then(images => this.setState({ images : images }));
+      .then(images => this.setState({ images : images }));
   }
 
   toggleEvent = (e) => {
     e.preventDefault()
-    this.setState({ displayed: true });
+    const { project, toggleProjects, toggledProject } = this.props;
+    toggleProjects(project.project_id)
+    if (toggledProject === project.project_id) {
+      this.setState({ displayed: true });
+    } else {
+      this.setState({displayed: false})
+    }
   }
 
   toggleControl = () => {

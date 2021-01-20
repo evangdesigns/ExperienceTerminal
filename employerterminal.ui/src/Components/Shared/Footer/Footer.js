@@ -52,6 +52,14 @@ class Footer extends React.Component {
     titleChange(newTitle);
   }
 
+  popModalClick= (e) => {
+    e.preventDefault();
+    const { popModal, toggleModal } = this.props;
+    window.scrollTo(0, 0);
+    popModal('Contact');
+    toggleModal();
+  }
+
   componentDidMount() {
     const { titleId } = this.props;
     this.getNextTitle(titleId)
@@ -105,8 +113,8 @@ class Footer extends React.Component {
           <Row>
             <Col className="pb-3 d-flex justify-content-center">
               <Link to="/resumes/Evan Grabenstein_Resume.pdf" rel="noopener noreferrer" target="_blank"><Resume className="icon"/></Link>
-              <a href="mailto:evan.grabenstein@gmail.com"><Mail className="icon"/></a>
-              <a href="https://www.linkedin.com/in/evangrabenstein/" rel="noopener noreferrer" target="_blank"><LinkedIn className="icon"/></a>
+              <Link onClick={this.popModalClick}><Mail className="icon"/></Link>
+              <a href={this.popModal} rel="noopener noreferrer" target="_blank"><LinkedIn className="icon"/></a>
               <a href="https://github.com/evangdesigns" rel="noopener noreferrer" target="_blank"><GitHub className="icon"/></a>
             </Col>
           </Row>

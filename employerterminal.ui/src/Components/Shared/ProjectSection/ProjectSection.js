@@ -12,13 +12,14 @@ import './ProjectSection.scss';
 class ProjectSection extends React.Component {
   state = {
     projects: [],
-    projectSkills: []
+    projectSkills: [],
+    toggledProject: 0,
   }
 
-  resetState = () => {
-    this.setState({ projects : []})
-    this.setState({ projectSkills : [] })
-  }
+  // resetState = () => {
+  //   this.setState({ projects : []})
+  //   this.setState({ projectSkills : [] })
+  // }
 
   componentDidMount() {
     const { sectionId } = this.props;
@@ -30,7 +31,7 @@ class ProjectSection extends React.Component {
     const { sectionId } = this.props;
     if (prevProps.sectionId !== sectionId ) {
       this.getProjectsSections(sectionId);
-      this.getProjectSkills(sectionId)
+      this.getProjectSkills(sectionId);
     }
   }
 
@@ -44,11 +45,15 @@ class ProjectSection extends React.Component {
     .then(skills => this.setState({ projectSkills : skills }))
   }
 
+  toggleProjects = (id) => {
+    this.setState({ toggledProject: id })
+  }
+
   renderProjects = () => {
-    const { projects } = this.state;
+    const { projects, toggledProject } = this.state;
     const { titleId, popModal, toggleModal } = this.props;
     if (titleId === 2 || titleId === 4) {
-      return (projects.map(project => <ProjectList key={project.project_id} project={project} popModal={popModal} toggleModal={toggleModal} />))
+      return (projects.map(project => <ProjectList key={project.project_id} project={project} toggledProject={toggledProject} toggleProjects={this.toggleProjects} popModal={popModal} toggleModal={toggleModal} />))
     } else if (titleId === 3 || titleId === 5)
      return (projects.map(project => <Project key={project.project_id} project={project} />)
      )

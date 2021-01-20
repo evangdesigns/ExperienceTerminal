@@ -11,7 +11,6 @@ import Bio from'../Components/Pages/Bio/Bio';
 import TitlePage from '../Components/Pages/TitlePage/TitlePage';
 import Modal from '../Components/Shared/Modal/Modal';
 import Footer from '../Components/Shared/Footer/Footer';
-// import ProjectForm from '../Components/Form/ProjectForm';
 
 import { getAllTitles, getTitleId } from '../helpers/data/titles';
 
@@ -25,7 +24,7 @@ class App extends React.PureComponent {
     selectedTitleId: 1,
     titles: [],
     modalShow: false,
-    modalData: null,
+    modalData: "Contact",
   }
 
   toggleModal = () => {
@@ -109,7 +108,6 @@ class App extends React.PureComponent {
         <Container>
           <Router>
           {buildModal()}
-           {/* <ProjectForm /> */}
             <HeadBoard titles={titles} selectedTitle={selectedTitle} titleChange={this.titleChange} routeWriter={this.routeWriter}/>
             <DirectiveSign titleId={selectedTitleId} selectedTitle={selectedTitle} titleChange={this.titleChange} routeWriter={this.routeWriter}/>
               <Switch>
