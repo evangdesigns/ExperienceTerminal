@@ -4,7 +4,8 @@
   "description": "Server for MERN Stack Application",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server"
+    "start": "nodemon server",
+    "build": "cd client && (react-scripts build)"
   },
   "engines": {
     "node": "12.18.0",
