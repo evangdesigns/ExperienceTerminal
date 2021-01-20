@@ -4,7 +4,7 @@
   "description": "Server for MERN Stack Application",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server"
+    "start": "cd server && nodemon server"
   },
   "engines": {
     "node": "12.18.0",
