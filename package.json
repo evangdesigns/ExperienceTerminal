@@ -1,8 +1,8 @@
 {
   "name": "experienceterminal",
   "version": "1.0.0",
-  "description": "Server for MERN Stack Application",
-  "main": "server.js",
+  "description": "Portfolio App",
+  "main": "server/server.js",
   "scripts": {
     "start": "cd server && (nodemon server)",
     "build": "react-scripts build"
