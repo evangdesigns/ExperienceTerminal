@@ -20,11 +20,6 @@
   .projectImage {
     width: 100%;
   }
-  .projectDescription {
-    padding: 20px 20px 0;
-    text-align: justify;
-    text-align-last: center;
-  }
   .projectLinks {
     text-align: center;
     padding-bottom: 20px;
@@ -55,6 +50,12 @@
   }
 }
 
+.project-name {
+  h3 {
+  font-weight: 300 !important;
+  }
+}
+
 .ProjectToggle {
   .Content {
     width: 100%;
@@ -74,7 +75,7 @@
       margin: 0px auto;
       text-align: center;
       img {
-        height:100%;
+        width:100%;
       }
     }
     .projectVideo {
@@ -91,13 +92,14 @@
           height: 100%;
         }
     }
-    .projectDescription {
-      margin:50px 25px 0;
-      text-align: justify;
-      text-align-last: center;
-    }
     .exit {margin-bottom: 25px;}
   }
+}
+.projectDescription {
+  margin:50px 25px 0;
+  text-align: justify;
+  text-align-last: center;
+  font-weight: 300;
 }
 
 

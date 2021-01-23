@@ -1,5 +1,5 @@
 .DepartureLetter {
-  margin:.5%;
+  margin: .5%;
   font-weight: normal;
   span.letter {
     display: inline-block;
@@ -111,32 +111,36 @@
 
 //Desktops, large screens
 @media screen and (max-width: 1200px) {
-.DepartureLetter {
-  span.letter {
-    font-size: 25pt;
+  .DepartureLetter {
+    span.letter {
+      font-size: 25pt;
+    }
   }
-}
 }
 //Small screens, laptops
 @media screen and (max-width: 1024px) {
   .DepartureLetter {
     span.letter {
-      font-size: 18pt;
+      font-size: 3.25vw;
     }
   }
 }
 //iPads, Tablets
-@media screen and (max-width: 768px) {
-  .DepartureLetter {
-    span.letter {
-      font-size: 12pt;
-    }
-  }
-}
+// @media screen and (max-width: 768px) {
+//   .DepartureLetter {
+//     span.letter {
+
+//     }
+//   }
+// }
 
 //Mobile devices
 @media screen and (max-width: 500px) {
-
+  .DepartureLetter {
+    span.letter {
+      margin-bottom:5px;
+    }
+  }
 }
 
 

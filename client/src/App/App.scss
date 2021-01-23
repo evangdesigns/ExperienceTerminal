@@ -7,7 +7,6 @@
   align-items: center;
   font-size: 18pt;
   color: white;
-  // overflow-y: hidden
 }
 .button-styles {
   background-color: $black;
@@ -19,6 +18,7 @@
   font-weight:600;
   text-transform: uppercase;
 }
+
 .carousel {
   img {
     padding: 30px;
@@ -58,8 +58,8 @@
   }
   .logo {
     fill:$white;
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
   }
 }
 
@@ -81,6 +81,19 @@ svg {
   }
 }
 
+.arrow {
+  .up {
+    transform: rotate(-90deg);
+  }
+  .down {
+    transform: rotate(90deg);
+  }
+  .left {
+    transform: rotate(-180deg);
+  }
+}
+
+
 //Desktops, large screens
 @media screen and (max-width: 1200px) {
 .container {
@@ -89,7 +102,18 @@ svg {
 }
 //Small screens, laptops
 @media screen and (max-width: 1024px) {
-
+  h1 {
+    font-size: 5vw !important;
+  }
+  h2 {
+    font-size: 4vw !important;
+  }
+  .head-board{
+    .logo {
+      width: 5vw;
+      height: 5vw;
+    }
+  }
 }
 
 //iPads, Tablets
@@ -112,5 +136,8 @@ svg {
         margin: 0 30px;
       }
     }
+  }
+  .hide-sm {
+    display: none;
   }
 }

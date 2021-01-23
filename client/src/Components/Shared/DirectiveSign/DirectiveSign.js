@@ -2,10 +2,11 @@ import React from 'react';
 import SkillBox from '../Skills/SkillBox';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Arrow} from '../../../images/icons/icon_arrow.svg';
-import { Row, Col, Container, Media } from 'react-bootstrap';
+import { Row, Col, Container, Button } from 'react-bootstrap';
 import { getTitle } from '../../../helpers/data/titles';
 
 import './DirectiveSign.scss';
+import e from 'cors';
 
 
 class DirectiveSign extends React.Component {
@@ -36,14 +37,9 @@ class DirectiveSign extends React.Component {
     .then(title => this.setState({ prev : title }))
   }
 
-  // routeEvent = (title) => {
-  //   const { routeWriter } = this.props;
-  //   routeWriter(title);
-  // }
-
   eventHandler = (e) => {
     e.preventDefault();
-    const { titleChange } = this.props;
+    const { titleChange, routeWriter } = this.props;
     const newTitle = e.target.id;
     titleChange(newTitle);
   }
@@ -76,29 +72,37 @@ class DirectiveSign extends React.Component {
           </svg>
         </div>
         <Container bsPrefix="DirectiveSign">
-        <Row className="upperDeck py-3">
-          <Col onClick={this.eventHandler}>
-          <Link to={routeWriter(prev.title_name)}>
-            <div className="clickOverlay" id={prev.title_name}></div>
-          </Link>
-            <Media className="underlay">
-              <Arrow className="align-self-start mr-3 hrzArrow" transform="rotate(180)"/>
-              <Media.Body>
-              <h3><img src={`images/icons/title/${prev.title_icon}.png`} alt=" " width={50} /> {prev.title_name}</h3>
-              </Media.Body>
-            </Media>
+        <Row className="upperDeck">
+          <Col>
+            <div className="clickOverlay" id={prev.title_name} onClick={this.eventHandler}>
+              <Link id={prev.title_name} to={routeWriter(prev.title_name)} >
+                <button id={prev.title_name} className="arrow">
+                  <div id={prev.title_name} className="d-flex justify-content-start align-items-center prev">
+                    <img id={prev.title_name} src="images/icons/icon_arrow.svg" width={50} alt={`${prev.title_name} arrow`} className="left"/>
+                    <img id={prev.title_name} src={`images/icons/title/${prev.title_icon}.png`} alt={`${prev.title_name} icon`}/>
+                    <h3 id={prev.title_name}>{prev.title_name}</h3>
+                  </div>
+                </button>
+              </Link>
+            </div>
           </Col>
-          <Col onClick={this.eventHandler}>
-          <Link to={routeWriter(next.title_name)}>
-            <div className="clickOverlay" id={next.title_name}></div>
-          </Link>
-          <Media className="underlay">
-            <Media.Body>
-            <h3 className="text-right"><img src={`images/icons/title/${next.title_icon}.png`}  alt=" " width={50} /> {next.title_name}</h3>
-            </Media.Body>
-              <Arrow className="align-self-start ml-3 hrzArrow"/>
-          </Media>
+
+          <Col>
+            <div className="clickOverlay" id={next.title_name} onClick={this.eventHandler}>
+              <Link id={next.title_name} to={routeWriter(next.title_name)} >
+                <div id={next.title_name} className="d-flex justify-content-end">
+                  <button id={next.title_name} className="arrow">
+                    <div className="d-flex align-items-center next">
+                      <h3 id={next.title_name}>{next.title_name}</h3>
+                      <img id={next.title_name} src={`images/icons/title/${next.title_icon}.png`} alt={`${next.title_name} icon`}/>
+                      <img id={next.title_name} src="images/icons/icon_arrow.svg" width={50} alt={`${next.title_name} arrow`}/>
+                    </div>
+                  </button>
+                </div>
+              </Link>
+            </div>
           </Col>
+
         </Row>
         <Row>
           <Col className="py-3">

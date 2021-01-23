@@ -16,9 +16,8 @@ class HeadBoard extends React.Component {
           <Col>
             <Row>
               <Col>
-              <h1 className="welcome">
-                  <Logo className="logo"/>
-                  &nbsp;Welcome
+                <h1 className="welcome">
+                  <Logo className="logo"/>&nbsp;Welcome
                 </h1>
               </Col>
             </Row>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const getAllSkills = () => new Promise((resolve, reject) => {
-  axios.get(`*/api/skills`)
+  axios.get(`/api/skills`)
     .then((result) => resolve(result.data))
     .catch(error => reject(error))
 });
