@@ -60,6 +60,7 @@
     position: absolute;
     height: 0;
     top: .6em;
+    font-size:0pt;
   }
 
   span.flap {
@@ -113,7 +114,7 @@
 @media screen and (max-width: 1200px) {
   .DepartureLetter {
     span.letter {
-      font-size: 25pt;
+      font-size: 30pt;
     }
   }
 }
@@ -121,26 +122,24 @@
 @media screen and (max-width: 1024px) {
   .DepartureLetter {
     span.letter {
-      font-size: 3.25vw;
+      font-size: 4vw;
     }
   }
 }
 //iPads, Tablets
-// @media screen and (max-width: 768px) {
-//   .DepartureLetter {
-//     span.letter {
-
-//     }
-//   }
-// }
+@media screen and (max-width: 768px) {
+  .DepartureLetter {
+    span.letter {
+      .DepartureLetter {
+        margin: -1.5% .5%
+      }
+    }
+  }
+}
 
 //Mobile devices
 @media screen and (max-width: 500px) {
-  .DepartureLetter {
-    span.letter {
-      margin-bottom:5px;
-    }
-  }
+
 }
 
 

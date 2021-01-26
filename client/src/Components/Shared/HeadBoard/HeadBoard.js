@@ -13,26 +13,20 @@ class HeadBoard extends React.Component {
     return (
       <Jumbotron bsPrefix="head-board">
         <Row className="board-header mx-2">
-          <Col>
-            <Row>
-              <Col>
-                <h1 className="welcome">
-                  <Logo className="logo"/>&nbsp;Welcome
-                </h1>
-              </Col>
-            </Row>
+          <Col xl={2} lg={2} md={2} sm={12} xs={12}>
+            <Logo className="logo center-sm"/>
           </Col>
-          <Col>
-            <h1 className="text-right">Experience Terminal</h1>
+          <Col className="align-middle" xl={10} lg={10} md={10} sm={12} xs={12}>
+          <h1 className="header-title center-sm">Experience Terminal</h1>
           </Col>
         </Row>
         <Row>
           <DepartureBoard
-            letterCount={20}
+            letterCount={18}
             messages={['Evan Grabenstein', selectedTitle ]}
           />
         </Row>
-        <Row className="title-selector-container">
+        <Row className="title-selector-container hide-sm">
           <TitleSelector titles={titles} selectedTitle={selectedTitle} titleChange={titleChange}/>
         </Row>
       </Jumbotron>
