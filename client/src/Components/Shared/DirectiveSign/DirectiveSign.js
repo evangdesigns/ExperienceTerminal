@@ -97,7 +97,7 @@ class DirectiveSign extends React.Component {
             <Col xs={12} sm={6}>
               <div className="clickOverlay" id={prev.title_name} onClick={this.eventHandler}>
                 <Link id={prev.title_name} to={routeWriter(prev.title_name)} >
-                  <div id={next.title_name} className="d-flex prev">
+                  <div id={next.title_name} className="d-flex align-middle prev">
                     <Arrow id={prev.title_name} className="left icon black"/>
                     {this.renderTitleIcon(prev.title_name)}
                     <h3 id={prev.title_name}>{prev.title_name}</h3>

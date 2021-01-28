@@ -17,13 +17,6 @@ class UxUiDesign extends React.Component {
     this.getProjectsSections(titleId)
   }
 
-  // componentDidUpdate(prevProps) {
-  //   const { titleId } = this.props;
-  //   if (prevProps.titleId !== titleId ) {
-  //     this.getProjectsSections(titleId);
-  //   }
-  // }
-
   renderProjectTable = () => {
     const { projectSections } = this.state;
     const { popModal, toggleModal, titleId } = this.props;
