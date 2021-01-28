@@ -1,14 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import { ReactComponent as Arrow} from '../../../images/icons/icon_arrow.svg';
 import { ReactComponent as Logo} from '../../../images/logo.svg';
 import { ReactComponent as Resume} from '../../../images/icons/icon_Resume.svg';
 import { ReactComponent as Mail} from '../../../images/icons/icon_Contact.svg';
 import { ReactComponent as LinkedIn} from '../../../images/icons/icon_linkedin.svg';
 import { ReactComponent as GitHub} from '../../../images/icons/icon_GitHub.svg';
-import { Row, Col, Container, Media } from 'react-bootstrap';
-import { getTitle } from '../../../helpers/data/titles';
 
+import { ReactComponent as JOAT} from '../../../images/icons/title/title_joat.svg';
+import { ReactComponent as GraphicD} from '../../../images/icons/title/title_graphicDesigner.svg';
+import { ReactComponent as WebDev} from '../../../images/icons/title/title_webDeveloper.svg';
+import { ReactComponent as Market} from '../../../images/icons/title/title_marketeer.svg';
+import { ReactComponent as UxUi} from '../../../images/icons/title/title_uiUxDesigner.svg';
+
+import { Link } from 'react-router-dom';
+import { Row, Col, Container } from 'react-bootstrap';
+
+import { getTitle } from '../../../helpers/data/titles';
 import './Footer.scss';
 
 
@@ -40,9 +48,18 @@ class Footer extends React.Component {
     .then(title => this.setState({ prev : title }))
   }
 
-  routeEvent = (title) => {
-    const { routeWriter } = this.props;
-    routeWriter(title);
+  renderTitleIcon = (input) => {
+    if (input === "Jack of All Trades") {
+      return <JOAT className="icon white" id={input} />
+    } else if (input === "Graphic Designer") {
+      return <GraphicD className="icon white" id={input} />
+    } else if (input === "Web Developer") {
+      return <WebDev className="icon white" id={input} />
+    } else if (input === "Marketeer") {
+      return <Market className="icon white" id={input} />
+    } else if (input === "UX UI Designer") {
+      return <UxUi className="icon white" id={input} />
+    }
   }
 
   eventHandler = (e) => {
@@ -77,33 +94,37 @@ class Footer extends React.Component {
   render () {
     const { routeWriter } = this.props;
     const { next, prev } = this.state;
+
     return (
       <div>
         <Container bsPrefix="Footer">
           <div className="inner-footer">
             <Row className="upperDeck py-3">
-            <Col onClick={this.eventHandler}>
-            <Link to={routeWriter(prev.title_name)}>
-              <div className="clickOverlay" id={prev.title_name}></div>
-            </Link>
-              <Media className="underlay">
-                <Arrow className="align-self-start mr-3 hrzArrow" transform="rotate(180)" fill="#fff"/>
-                <Media.Body>
-                <h3><img className="title" src={`images/icons/title/${prev.title_icon}.svg`} alt=" " width={50} /> {prev.title_name}</h3>
-                </Media.Body>
-              </Media>
+
+              <Col xs={12} sm={6}>
+                <div className="clickOverlay" id={prev.title_name} onClick={this.eventHandler}>
+                  <Link id={prev.title_name} to={routeWriter(prev.title_name)} >
+                    <div id={next.title_name} className="d-flex prev">
+                      <Arrow id={prev.title_name} className="left icon white"/>
+                      {this.renderTitleIcon(prev.title_name)}
+                      <h3 id={prev.title_name}>{prev.title_name}</h3>
+                    </div>
+                  </Link>
+                </div>
+              </Col>
+
+            <Col xs={12} sm={6}>
+              <div className="clickOverlay" id={next.title_name} onClick={this.eventHandler}>
+                <Link id={next.title_name} to={routeWriter(next.title_name)} >
+                  <div id={next.title_name} className="d-flex next">
+                    <h3 id={next.title_name}>{next.title_name}</h3>
+                    {this.renderTitleIcon(next.title_name)}
+                    <Arrow id={prev.title_name} className="icon white"/>
+                  </div>
+                </Link>
+              </div>
             </Col>
-            <Col onClick={this.eventHandler}>
-            <Link to={routeWriter(next.title_name)}>
-              <div className="clickOverlay" id={next.title_name}></div>
-            </Link>
-            <Media className="underlay">
-              <Media.Body>
-              <h3 className="text-right"><img src={`images/icons/title/${next.title_icon}.svg`}  alt=" " width={50} /> {next.title_name}</h3>
-              </Media.Body>
-                <Arrow className="align-self-start ml-3 hrzArrow"/>
-            </Media>
-            </Col>
+
           </Row>
           <Row>
             <Col className="pt-3">
@@ -112,10 +133,10 @@ class Footer extends React.Component {
           </Row>
           <Row>
             <Col className="pb-3 d-flex justify-content-center">
-              <Link to="/resumes/Evan Grabenstein_Resume.pdf" rel="noopener noreferrer" target="_blank"><Resume className="icon"/></Link>
-              <Link onClick={this.popModalClick}><Mail className="icon"/></Link>
-              <a href={this.popModal} rel="noopener noreferrer" target="_blank"><LinkedIn className="icon"/></a>
-              <a href="https://github.com/evangdesigns" rel="noopener noreferrer" target="_blank"><GitHub className="icon"/></a>
+              <Link to="/resumes/Evan Grabenstein_Resume.pdf" rel="noopener noreferrer" target="_blank"><Resume className="icon white"/></Link>
+              <Link onClick={this.popModalClick}><Mail className="icon white"/></Link>
+              <a href={this.popModal} rel="noopener noreferrer" target="_blank"><LinkedIn className="icon white"/></a>
+              <a href="https://github.com/evangdesigns" rel="noopener noreferrer" target="_blank"><GitHub className="icon white"/></a>
             </Col>
           </Row>
         </div>

@@ -3,6 +3,9 @@
     width:50px;
     margin:5px;
     animation: 1s ease-in-out 0s 1 grow;
+    .ico {
+      max-width: 50px;
+    }
   }
 }
 
@@ -24,6 +27,7 @@
   position: absolute;
   font-size: small;
   color: black;
+  z-index:100;
   .arrow {
     border-style: solid;
     position: absolute;
@@ -63,5 +67,11 @@
 
 //Mobile devices
 @media screen and (max-width: 500px) {
-
+.ProjectSection {
+  .SkillBox {
+    img {
+      width: 30px;
+    }
+  }
+}
 }

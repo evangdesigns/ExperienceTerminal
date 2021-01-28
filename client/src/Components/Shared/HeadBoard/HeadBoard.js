@@ -13,11 +13,11 @@ class HeadBoard extends React.Component {
     return (
       <Jumbotron bsPrefix="head-board">
         <Row className="board-header mx-2">
-          <Col xl={2} lg={2} md={2} sm={12} xs={12}>
-            <Logo className="logo center-sm"/>
+          <Col className="center-sm" xl={1} lg={1} md={2} sm={12} xs={12}>
+            <Logo className="logo"/>
           </Col>
-          <Col className="align-middle" xl={10} lg={10} md={10} sm={12} xs={12}>
-          <h1 className="header-title center-sm">Experience Terminal</h1>
+          <Col className="align-middle" xl={11} lg={11} md={10} sm={12} xs={12}>
+          <h1 className="header-title center-sm text-uppercase">Experience Terminal</h1>
           </Col>
         </Row>
         <Row>

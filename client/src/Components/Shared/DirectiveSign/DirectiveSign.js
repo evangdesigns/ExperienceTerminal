@@ -1,12 +1,18 @@
 import React from 'react';
 import SkillBox from '../Skills/SkillBox';
-import { Link } from 'react-router-dom';
 import { ReactComponent as Arrow} from '../../../images/icons/icon_arrow.svg';
-import { Row, Col, Container, Button } from 'react-bootstrap';
+import { ReactComponent as JOAT} from '../../../images/icons/title/title_joat.svg';
+import { ReactComponent as GraphicD} from '../../../images/icons/title/title_graphicDesigner.svg';
+import { ReactComponent as WebDev} from '../../../images/icons/title/title_webDeveloper.svg';
+import { ReactComponent as Market} from '../../../images/icons/title/title_marketeer.svg';
+import { ReactComponent as UxUi} from '../../../images/icons/title/title_uiUxDesigner.svg';
+
+import { Link } from 'react-router-dom';
+import { Row, Col, Container } from 'react-bootstrap';
+
 import { getTitle } from '../../../helpers/data/titles';
 
 import './DirectiveSign.scss';
-import e from 'cors';
 
 
 class DirectiveSign extends React.Component {
@@ -35,6 +41,20 @@ class DirectiveSign extends React.Component {
     }
     getTitle(prevTitle)
     .then(title => this.setState({ prev : title }))
+  }
+
+  renderTitleIcon = (input) => {
+    if (input === "Jack of All Trades") {
+      return <JOAT className="icon black" id={input} />
+    } else if (input === "Graphic Designer") {
+      return <GraphicD className="icon black" id={input} />
+    } else if (input === "Web Developer") {
+      return <WebDev className="icon black" id={input} />
+    } else if (input === "Marketeer") {
+      return <Market className="icon black" id={input} />
+    } else if (input === "UX UI Designer") {
+      return <UxUi className="icon black" id={input} />
+    }
   }
 
   eventHandler = (e) => {
@@ -72,32 +92,27 @@ class DirectiveSign extends React.Component {
           </svg>
         </div>
         <Container bsPrefix="DirectiveSign">
-        <Row className="upperDeck">
-          <Col>
-            <div className="clickOverlay" id={prev.title_name} onClick={this.eventHandler}>
-              <Link id={prev.title_name} to={routeWriter(prev.title_name)} >
-                <button id={prev.title_name} className="arrow">
-                  <div id={prev.title_name} className="d-flex justify-content-start align-items-center prev">
-                    <img id={prev.title_name} src="images/icons/icon_arrow.svg" width={50} alt={`${prev.title_name} arrow`} className="left"/>
-                    <img id={prev.title_name} src={`images/icons/title/${prev.title_icon}.png`} alt={`${prev.title_name} icon`}/>
+          <Row className="upperDeck  py-3">
+
+            <Col xs={12} sm={6}>
+              <div className="clickOverlay" id={prev.title_name} onClick={this.eventHandler}>
+                <Link id={prev.title_name} to={routeWriter(prev.title_name)} >
+                  <div id={next.title_name} className="d-flex prev">
+                    <Arrow id={prev.title_name} className="left icon black"/>
+                    {this.renderTitleIcon(prev.title_name)}
                     <h3 id={prev.title_name}>{prev.title_name}</h3>
                   </div>
-                </button>
-              </Link>
-            </div>
-          </Col>
+                </Link>
+              </div>
+            </Col>
 
-          <Col>
+          <Col xs={12} sm={6}>
             <div className="clickOverlay" id={next.title_name} onClick={this.eventHandler}>
               <Link id={next.title_name} to={routeWriter(next.title_name)} >
-                <div id={next.title_name} className="d-flex justify-content-end">
-                  <button id={next.title_name} className="arrow">
-                    <div className="d-flex align-items-center next">
-                      <h3 id={next.title_name}>{next.title_name}</h3>
-                      <img id={next.title_name} src={`images/icons/title/${next.title_icon}.png`} alt={`${next.title_name} icon`}/>
-                      <img id={next.title_name} src="images/icons/icon_arrow.svg" width={50} alt={`${next.title_name} arrow`}/>
-                    </div>
-                  </button>
+                <div id={next.title_name} className="d-flex next">
+                  <h3 id={next.title_name}>{next.title_name}</h3>
+                  {this.renderTitleIcon(next.title_name)}
+                  <Arrow id={prev.title_name} className="icon black"/>
                 </div>
               </Link>
             </div>
@@ -111,13 +126,13 @@ class DirectiveSign extends React.Component {
         </Row>
         <Row>
           <Col xs={1} className="align-self-end px-0">
-          <Arrow  className="mb-2 vrtArrow" transform="rotate(90)" />
+          <Arrow  className="mb-2 down" transform="rotate(90)" />
           </Col>
           <Col xs={10} className="px-0">
             <SkillBox titleId={titleId} />
           </Col>
           <Col xs={1} className="align-self-end px-0">
-          <Arrow  className="mb-2 vrtArrow float-right" transform="rotate(90)"/>
+          <Arrow  className="mb-2 down float-right" transform="rotate(90)"/>
           </Col>
         </Row>
       </Container>

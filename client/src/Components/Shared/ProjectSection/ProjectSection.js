@@ -5,7 +5,7 @@ import Skill from '../Skills/Skill';
 import { CSSTransitionGroup } from 'react-transition-group'
 import { getProjectsBySectionId } from '../../../helpers/data/projects';
 import { getSkillsByProjectSection } from '../../../helpers/data/skills';
-import { Table } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import './ProjectSection.scss';
 
@@ -15,11 +15,6 @@ class ProjectSection extends React.Component {
     projectSkills: [],
     toggledProject: 0,
   }
-
-  // resetState = () => {
-  //   this.setState({ projects : []})
-  //   this.setState({ projectSkills : [] })
-  // }
 
   componentDidMount() {
     const { sectionId } = this.props;
@@ -69,23 +64,17 @@ class ProjectSection extends React.Component {
           transitionAppearTimeout={500}
           transitionEnterTimeout={500}
           transitionLeaveTimeout={100}>
-      <div className="ProjectSection">
-        <Table striped size="sm" className="ProjectSection" variant="dark">
-          <thead>
-            <tr>
-              <th colSpan={2} className="align-middle py-1 px-3"><h2>{section.project_section_name}</h2></th>
-              <th className="align-middle text-right py-1 px-3 float-right">
-                <div className="d-flex align-content-end">
+        <Container fluid className="ProjectSection">
+            <Row className="py-1 align-middle header">
+              <Col sm={12} md={6} className="align-middle"><h2>{section.project_section_name}</h2></Col>
+              <Col className="align-middle">
+                <div className="d-flex skills">
                   {projectSkills.map(skill => <Skill key={skill.skill_id} skill={skill}/>)}
                 </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
+              </Col>
+            </Row>
             {this.renderProjects()}
-          </tbody>
-        </Table>
-      </div>
+        </Container>
       </CSSTransitionGroup>
     );
   }

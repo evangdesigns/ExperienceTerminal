@@ -1,6 +1,7 @@
 import React from 'react';
 import ProjectDisplayToggle from './ProjectDisplayToggle';
-import { ReactComponent as View } from '../../../images/icons/icon_view.svg';
+import { Row, Col } from 'react-bootstrap';
+import { ReactComponent as View } from '../../../images/icons/icon_plus.svg';
 import { getImagesByProjectId } from '../../../helpers/data/images';
 import './Project.scss';
 
@@ -41,14 +42,12 @@ class ProjectList extends React.Component {
     const { images, displayed } = this.state;
     return (
       <>
-      <tr className="Project">
-        <td className="px-4 img-thumbnail" width="100"><img src={`/images/projectImages/${project.project_image_url}`} alt=""/></td>
-        <td className="px-4 col-10"><h3 className="project-name">{project.project_name}</h3></td>
-        <td className="text-right px-4"><div className="clickOverlay" id={project.project_id} onClick={this.toggleControl}><View className="white underlay" id={project.project_id}/></div></td>
-      </tr>
-      <tr className="ProjectToggle">
+      <Row className="Project py-1">
+        <Col xs={2} className="img-thumbnail align-middle "><img src={`/images/projectImages/${project.project_image_url}`} alt=""/></Col>
+        <Col><h3 className="project-name align-middle">{project.project_name}</h3></Col>
+        <Col xs="auto" className="text-right align-middle ps-0 py-0"><div className="clickOverlay" id={project.project_id} onClick={this.toggleControl}><View className="icon white underlay" id={project.project_id}/></div></Col>
         {displayed ? <ProjectDisplayToggle project={project} images={images} toggleControl={this.toggleControl} /> : null }
-      </tr>
+      </Row>
       </>
     );
   }

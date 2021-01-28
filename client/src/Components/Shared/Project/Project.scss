@@ -2,13 +2,11 @@
 
 .Project {
   .img-thumbnail {
-    margin: 3px;
-    height: 30px;
     border-radius: 0;
+    border: none;
     background-color: rgba($color: $white, $alpha: .0);
-    text-align: center;
     img {
-      height: 30px;
+      width: 100%;
     }
   }
   .carousel {
@@ -23,11 +21,6 @@
   .projectLinks {
     text-align: center;
     padding-bottom: 20px;
-    svg {
-      width: 75px;
-      height: 75px;
-      fill:$white;
-    }
   }
   .clickOverlay{
     position: relative;
@@ -40,30 +33,22 @@
       cursor: pointer;
     }
     .underlay {
-      position: relative;
-      z-index:1;
-      svg {
-        pointer-events:none;
-        z-index:-1;
-      }
+      margin-top:8px;
+      pointer-events:none;
+      z-index:-5;
+      width: 20px;
     }
   }
-}
-
-.project-name {
-  h3 {
-  font-weight: 300 !important;
+  h3.project-name {
+    font-weight: 300 !important;
   }
 }
 
 .ProjectToggle {
   .Content {
     width: 100%;
-    background-color: $black;
-    margin: 5px auto 250px;
-    background:$black;
+    margin: 5px auto 10px;
     color: $white;
-    border-radius:10px;
     .projectPdf {
       width: 100%;
       text-align: center;
@@ -75,7 +60,8 @@
       margin: 0px auto;
       text-align: center;
       img {
-        width:100%;
+        max-width: 100%;
+        min-width: 50%;
       }
     }
     .projectVideo {
@@ -92,15 +78,19 @@
           height: 100%;
         }
     }
-    .exit {margin-bottom: 25px;}
+  }
+  .exit {
+    text-align:center;
+    cursor: pointer;
+  }
+  .projectDescription {
+    margin:20px;
+    text-align: justify;
+    text-align-last: center;
+    font-weight: 300;
   }
 }
-.projectDescription {
-  margin:50px 25px 0;
-  text-align: justify;
-  text-align-last: center;
-  font-weight: 300;
-}
+
 
 
 //Desktops, large screens
@@ -114,7 +104,10 @@
 
 //iPads, Tablets
 @media screen and (max-width: 768px) {
-
+  h3.project-name {
+    font-size: 16pt;
+    font-weight: 300 !important;
+  }
 }
 
 //Mobile devices

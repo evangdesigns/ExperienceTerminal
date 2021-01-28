@@ -2,26 +2,24 @@
 @import '../../../styles/variables.scss';
 
 .ProjectSection {
-  table {
     width: 100%;
     background-color: $black;
     border-radius: 10px;
     border-top: none !important;
     box-shadow: $black 2px 2px 10px;
-  }
-  thead,tr,th,td {
-    border: none !important;
-  }
-  svg.white {
-    fill:$white;
-    margin-bottom:5px;
-    width: 30px;
-    height: 30px;
-  }
+    margin: 20px 0;
   h2 {
     text-transform:uppercase;
     font-weight: 300;
     font-size: + 2.5rem;
+
+  }
+  .row:nth-child(even) {
+    background-color: rgba($color: $white, $alpha: .1);
+  }
+  .skills {
+    justify-content: end;
+    float: right;
   }
 }
 .example-appear {
@@ -50,4 +48,35 @@
 .example-leave.example-leave-active {
   opacity: 0.01;
   transition: opacity 500ms ease-in;
+}
+
+@keyframes click {
+  50% {transform: rotate(45deg);}
+}
+
+//Desktops, large screens
+@media screen and (max-width: 1200px) {
+
+}
+//Small screens, laptops
+@media screen and (max-width: 1024px) {
+
+}
+
+//iPads, Tablets
+@media screen and (max-width: 768px) {
+  .ProjectSection{
+    .header {
+      text-align: center;
+    }
+    .skills {
+      justify-content: center;
+      float:none;
+    }
+  }
+}
+
+//Mobile devices
+@media screen and (max-width: 500px) {
+
 }

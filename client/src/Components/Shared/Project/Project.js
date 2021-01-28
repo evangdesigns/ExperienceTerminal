@@ -4,6 +4,7 @@ import { ReactComponent as URLico} from '../../../images/icons/icon_website.svg'
 import { ReactComponent as GITico} from '../../../images/icons/icon_GitHub.svg';
 import { getImagesByProjectId } from '../../../helpers/data/images';
 import './Project.scss';
+import { Row, Col } from 'react-bootstrap';
 
 class Project extends React.Component {
   state = {
@@ -55,22 +56,22 @@ class Project extends React.Component {
     const { project } = this.props;
     return (
       <>
-      <tr className="Project">
-       <td colSpan="3">
+      <Row className="Project">
+       <Col>
        {this.sliderRender()}
-        </td>
-      </tr>
-      <tr className="Project">
-      <td colSpan="3">
+        </Col>
+      </Row>
+      <Row className="Project">
+      <Col>
           <div className="projectDescription">
             <p>{project.project_description}</p>
           </div>
           <div className="projectLinks">
-            {project.project_url ? <a href={project.project_url} rel="noopener noreferrer" target="_blank"><URLico/></a> : null}
-            {project.project_git_url ? <a href={project.project_git_url} rel="noopener noreferrer" target="_blank"><GITico/></a> : null}
+            {project.project_url ? <a href={project.project_url} rel="noopener noreferrer" target="_blank"><URLico className="icon white" /></a> : null}
+            {project.project_git_url ? <a href={project.project_git_url} rel="noopener noreferrer" target="_blank"><GITico className="icon white" /></a> : null}
           </div>
-         </td>
-      </tr>
+         </Col>
+      </Row>
       </>
     );
   }

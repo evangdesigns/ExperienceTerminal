@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import { Row } from 'react-bootstrap';
 import './Project.scss';
 
 class ProjectDisplayToggle extends React.Component {
@@ -67,13 +68,15 @@ imageDisplay = () => {
 render () {
   const { project, toggleControl } = this.props;
   return (
-    <td className="Content" colSpan="3">
-      {this.imageDisplay()}
-      <div className="projectDescription">
-        <p>{project.project_description}</p>
-      </div>
-      <h4 className="exit text-center" onClick={toggleControl}>CLOSE</h4>
-    </td>
+    <div className="ProjectToggle">
+      <Row className="Content align-center">
+        {this.imageDisplay()}
+        <div>
+          <p className="projectDescription">{project.project_description}</p>
+          <p className="exit text-center" onClick={toggleControl}>CLOSE</p>
+        </div>
+      </Row>
+    </div>
   );
 }
 }
