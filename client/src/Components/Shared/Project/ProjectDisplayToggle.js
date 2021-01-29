@@ -1,6 +1,5 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import { Row } from 'react-bootstrap';
 import './Project.scss';
 
 class ProjectDisplayToggle extends React.Component {
@@ -8,7 +7,7 @@ class ProjectDisplayToggle extends React.Component {
 imageDisplay = () => {
   const { images, project } = this.props;
   let thumb = project.project_image_url.includes('tmb');
-  let video = project.project_url.includes('youtube');
+  let video = project.project_url.includes('embed')
   if (thumb && images.length > 1) {
     return (
       <Carousel>
@@ -53,7 +52,7 @@ imageDisplay = () => {
   } else if (video){
     return (
       <div className="projectVideo">
-        <iframe title={project.project_name} src={project.project_url} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title={project.project_name} src={project.project_url} frameborder="0" allowfullscreen></iframe>
       </div>
     )
   } else {
@@ -69,13 +68,13 @@ render () {
   const { project, toggleControl } = this.props;
   return (
     <div className="ProjectToggle">
-      <Row className="Content align-center">
+      <div className="Content align-center">
         {this.imageDisplay()}
         <div>
           <p className="projectDescription">{project.project_description}</p>
           <p className="exit text-center" onClick={toggleControl}>CLOSE</p>
         </div>
-      </Row>
+      </div>
     </div>
   );
 }

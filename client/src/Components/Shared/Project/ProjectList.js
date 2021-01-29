@@ -46,8 +46,8 @@ class ProjectList extends React.Component {
         <Col xs={2} className="img-thumbnail align-middle "><img src={`/images/projectImages/${project.project_image_url}`} alt=""/></Col>
         <Col><h3 className="project-name align-middle">{project.project_name}</h3></Col>
         <Col xs="auto" className="text-right align-middle ps-0 py-0"><div className="clickOverlay" id={project.project_id} onClick={this.toggleControl}><View className="icon white underlay" id={project.project_id}/></div></Col>
-        {displayed ? <ProjectDisplayToggle project={project} images={images} toggleControl={this.toggleControl} /> : null }
       </Row>
+      {displayed ? <ProjectDisplayToggle project={project} images={images} toggleControl={this.toggleControl} /> : null }
       </>
     );
   }

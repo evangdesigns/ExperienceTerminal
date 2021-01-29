@@ -2,7 +2,7 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route, useHistory
 } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import HeadBoard from '../Components/Shared/HeadBoard/HeadBoard';
@@ -67,6 +67,7 @@ class App extends React.PureComponent {
   titleChange = (newTitle) => {
     this.setState({selectedTitle : newTitle });
     this.getTitleId(newTitle);
+    window.scrollTo(0, 0);
   }
 
   routeChecker = () => {
